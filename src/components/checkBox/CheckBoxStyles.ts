@@ -9,7 +9,6 @@ export const CheckBoxContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   justify-self: flex-start;
-  margin-top: ${normalize(30)}px;
 `
 
 export const CheckBoxShow = styled.View<ICheckBoxStyles>`

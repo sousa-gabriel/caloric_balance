@@ -12,7 +12,7 @@ interface ICheckBox {
 
 export function CheckBox({ checked, onCheck }: ICheckBox) {
   return (
-    <S.CheckBoxContainer onPress={onCheck}>
+    <S.CheckBoxContainer onPress={onCheck} activeOpacity={0.7}>
       <S.CheckBoxShow isChecked={checked}>
         {checked && (
           <Icon
