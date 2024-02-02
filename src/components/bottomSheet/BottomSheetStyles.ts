@@ -2,7 +2,6 @@ import { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet'
 import styled from 'styled-components/native'
 
 export const ContainerBackdrop = styled(BottomSheetBackdrop)`
-  background-color: #000000cc;
   position: absolute;
   width: 120%;
   height: 100%;

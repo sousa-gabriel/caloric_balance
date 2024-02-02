@@ -7,6 +7,7 @@ import React, { ReactNode, RefObject, useCallback } from 'react'
 import { BottomSheetModalMethods } from '@gorhom/bottom-sheet/lib/typescript/types'
 import { useBottomSheetBackHandler } from './utils'
 import * as S from './BottomSheetStyles'
+import { theme } from '../../theme/theme'
 
 export interface IBottomSheet {
   bottomSheetRef: RefObject<BottomSheetModalMethods>
@@ -38,6 +39,8 @@ export function BottomSheet({ bottomSheetRef, children }: IBottomSheet) {
         keyboardBlurBehavior={'restore'}
         enableDynamicSizing
         animateOnMount
+        backgroundStyle={{ backgroundColor: theme.colors.background }}
+        handleIndicatorStyle={{ backgroundColor: theme.colors.primary }}
       >
         <S.BottomSheetContent>{children}</S.BottomSheetContent>
       </BottomSheetModal>
