@@ -42,6 +42,7 @@ export const theme = {
     },
   },
   spaces: {
+    sp0: normalize(0),
     sp4: normalize(4),
     sp8: normalize(8),
     sp12: normalize(12),
@@ -86,3 +87,4 @@ export const theme = {
 export type Theme = typeof theme
 export type ThemeColors = keyof Theme['colors']
 export type ThemeFonts = keyof Theme['fonts']
+export type ThemeSpaces = keyof Theme['spaces']
