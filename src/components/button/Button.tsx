@@ -29,7 +29,9 @@ export function Button({
       activeOpacity={0.7}
       isDisabled={isDisabled}
     >
-      {icon && <IconWrapper icon={icon} color={buttonColor} marginRight={16} />}
+      {icon && (
+        <IconWrapper icon={icon} color={buttonColor} marginRight={'sp16'} />
+      )}
       <Roboto text={title} textStyles="LargeSemiBold" color={buttonColor} />
     </S.ButtonContainer>
   )

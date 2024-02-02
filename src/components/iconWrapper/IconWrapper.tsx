@@ -1,28 +1,37 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { IIconOptions } from './IconNames'
-import { ThemeColors, theme } from '../../theme/theme'
-import { normalize } from '../../utils/normalize'
+import { ThemeColors, ThemeSpaces, theme } from '../../theme/theme'
+import { TouchableOpacity } from 'react-native'
 
 interface IIconWrapper {
   icon: IIconOptions
-  size?: number
+  size?: ThemeSpaces
   color?: ThemeColors
-  marginRight?: number
+  marginRight?: ThemeSpaces
+  onPress?: () => void
 }
 
 export function IconWrapper({
   icon,
-  size = 20,
+  size = 'sp20',
   color = 'onPrimary',
-  marginRight = 0,
+  marginRight = 'sp0',
+  onPress,
 }: IIconWrapper) {
   return (
-    <Icon
-      name={icon}
-      size={size}
-      color={theme.colors[color]}
-      style={{ marginRight: normalize(marginRight) }}
-    />
+    <TouchableOpacity
+      onPress={onPress}
+      disabled={!onPress}
+      activeOpacity={0.7}
+      style={{ alignItems: 'center', justifyContent: 'center' }}
+    >
+      <Icon
+        name={icon}
+        size={theme.spaces[size]}
+        color={theme.colors[color]}
+        style={{ marginRight: theme.spaces[marginRight] }}
+      />
+    </TouchableOpacity>
   )
 }
