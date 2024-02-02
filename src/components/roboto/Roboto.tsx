@@ -1,16 +1,18 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text, TextStyle } from 'react-native'
 import { ThemeColors, ThemeFonts, theme } from '../../theme/theme'
 
 interface IRoboto {
   text: string
   color?: ThemeColors
   textStyles?: ThemeFonts
+  style?: TextStyle
 }
 export function Roboto({
   text,
   color = 'gray700',
   textStyles = 'LargeBold',
+  style,
 }: IRoboto) {
   const robotoFont = {
     LargeBold: theme.fonts.LargeBold,
@@ -29,6 +31,7 @@ export function Roboto({
       style={{
         color: theme.colors[color],
         ...robotoFont[textStyles],
+        ...style,
       }}
     >
       {text}
