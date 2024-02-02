@@ -5,32 +5,32 @@ import { IconWrapper } from '../iconWrapper/IconWrapper'
 import { IIconOptions } from '../iconWrapper/IconNames'
 
 export interface ButtonProps {
-  text: string
-  onClick: () => void
+  title: string
+  onPress: () => void
   icon?: IIconOptions
   typeButton?: 'Default' | 'ButtonLine' | 'ButtonText'
   isDisabled?: boolean
 }
 
 export function Button({
-  text,
-  onClick,
+  title,
+  onPress,
   icon,
   typeButton = 'Default',
-  isDisabled = true,
+  isDisabled = false,
 }: ButtonProps) {
   const buttonColor = typeButton === 'Default' ? 'onPrimary' : 'primary'
 
   return (
     <S.ButtonContainer
-      onPress={onClick}
+      onPress={onPress}
       disabled={isDisabled}
       type={typeButton}
       activeOpacity={0.7}
       isDisabled={isDisabled}
     >
       {icon && <IconWrapper icon={icon} color={buttonColor} marginRight={16} />}
-      <Roboto text={text} textStyles="LargeSemiBold" color={buttonColor} />
+      <Roboto text={title} textStyles="LargeSemiBold" color={buttonColor} />
     </S.ButtonContainer>
   )
 }
