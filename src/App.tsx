@@ -1,5 +1,5 @@
 import React from 'react'
-import { Login } from './screens/auth/Login/Login'
+import { Login } from './screens/auth/loginScreen/Login'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme/theme'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
