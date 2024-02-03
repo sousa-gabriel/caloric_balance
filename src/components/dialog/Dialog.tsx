@@ -1,8 +1,8 @@
 import React from 'react'
-import { Roboto } from '../roboto/Roboto'
-import { Button } from '../button/Button'
 import * as S from './DialogStyles'
-import { normalize } from '../../utils/normalize'
+import { Roboto } from '../roboto/Roboto'
+import { normalize } from '@utils'
+import { Button } from '../button/Button'
 
 interface IDialog {
   isVisible: boolean

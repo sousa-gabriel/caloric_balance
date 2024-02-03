@@ -7,7 +7,7 @@ import React, { ReactNode, RefObject, useCallback } from 'react'
 import { BottomSheetModalMethods } from '@gorhom/bottom-sheet/lib/typescript/types'
 import { useBottomSheetBackHandler } from './utils'
 import * as S from './BottomSheetStyles'
-import { theme } from '../../theme/theme'
+import { theme } from '@theme'
 
 export interface IBottomSheet {
   bottomSheetRef: RefObject<BottomSheetModalMethods>

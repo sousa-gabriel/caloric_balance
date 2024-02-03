@@ -5,9 +5,9 @@ import {
   LocaleConfig,
 } from 'react-native-calendars'
 import { generateInterval } from './generateInterval'
-import { theme } from '../../theme/theme'
-import { IconWrapper } from '../iconWrapper/IconWrapper'
 import { Dimensions } from 'react-native'
+import { theme } from '@theme'
+import { IconWrapper } from '../iconWrapper/IconWrapper'
 
 LocaleConfig.locales['pt-br'] = ptBR
 LocaleConfig.defaultLocale = 'pt-br'

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as S from './InputStyle'
 import { Roboto } from '../roboto/Roboto'
-import { theme } from '../../theme/theme'
+import { theme } from '@theme'
 
 export interface IInput {
   value: string

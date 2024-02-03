@@ -2,8 +2,8 @@ import React from 'react'
 import { Roboto } from '../roboto/Roboto'
 import * as S from './CheckBoxStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { theme } from '../../theme/theme'
-import { normalize } from '../../utils/normalize'
+import { theme } from '@theme'
+import { normalize } from '@utils'
 
 interface ICheckBox {
   checked: boolean

@@ -1,7 +1,7 @@
 import { eachDayOfInterval, format, addDays } from 'date-fns'
 import { Platform } from 'react-native'
 import { IDay, IMarkedDate } from './Calendar'
-import { theme } from '../../theme/theme'
+import { theme } from '@theme'
 
 export function getPlatFromDate(date: Date) {
   if (Platform.OS === 'ios') {

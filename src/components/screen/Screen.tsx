@@ -1,16 +1,16 @@
 import React, { ReactNode } from 'react'
 import { KeyboardAvoidingView, Platform } from 'react-native'
-import { useAppSafeArea } from '../../hooks/useAppSafeArea'
 import * as S from './ScreenStyles'
 import {
   ScrollViewContainer,
   ViewContainer,
 } from './components/scroollViewContainer/ScrollViewContainer'
-import { theme } from '../../theme/theme'
+import { theme } from '@theme'
+import { useAppSafeArea } from '@hooks'
 
 interface IScreen {
   children: ReactNode
-  scrollable: boolean
+  scrollable?: boolean
 }
 
 export const Screen = ({ children, scrollable = false }: IScreen) => {

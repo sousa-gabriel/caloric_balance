@@ -1,6 +1,6 @@
+import { ThemeColors, ThemeFonts, theme } from '@theme'
 import React from 'react'
 import { Text, TextStyle } from 'react-native'
-import { ThemeColors, ThemeFonts, theme } from '../../theme/theme'
 
 interface IRoboto {
   text: string

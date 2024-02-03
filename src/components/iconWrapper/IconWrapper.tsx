@@ -1,8 +1,8 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { IIconOptions } from './IconNames'
-import { ThemeColors, ThemeSpaces, theme } from '../../theme/theme'
 import { TouchableOpacity } from 'react-native'
+import { ThemeColors, ThemeSpaces, theme } from '@theme'
 
 interface IIconWrapper {
   icon: IIconOptions

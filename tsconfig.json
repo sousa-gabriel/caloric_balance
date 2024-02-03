@@ -3,6 +3,15 @@
   "compilerOptions": {
     "strict": true,
     "skipLibCheck": true,
-    "types": ["@types/styled-components-react-native"]
+    "types": ["@types/styled-components-react-native"],
+    "baseUrl": "./",
+    "paths": {
+      "@components": ["src/components"],
+      "@screens": ["src/screens"],
+      "@assets": ["src/assets"],
+      "@utils": ["src/utils"],
+      "@theme": ["src/theme"],
+      "@hooks": ["src/hooks"]
+    }
   }
 }

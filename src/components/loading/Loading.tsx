@@ -1,7 +1,7 @@
+import { ThemeColors, theme } from '@theme'
+import { normalize } from '@utils'
 import React from 'react'
 import { DotIndicator } from 'react-native-indicators'
-import { ThemeColors, theme } from '../../theme/theme'
-import { normalize } from '../../utils/normalize'
 
 interface ILoading {
   color?: ThemeColors

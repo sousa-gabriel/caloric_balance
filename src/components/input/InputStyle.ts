@@ -1,5 +1,5 @@
+import { normalize } from '@utils'
 import styled from 'styled-components/native'
-import { normalize } from '../../utils/normalize'
 
 interface IInputStyle {
   color: 'primary' | 'secondary' | 'error'
