@@ -49,7 +49,6 @@ const Calendar = ({ markedDates, onDayPress, StartMarkedDates }: ICalendar) => {
       headerStyle={{
         backgroundColor: theme.colors.primary,
         marginBottom: 10,
-        borderBottomWidth: 2,
         width: Dimensions.get('window').width - 44,
       }}
       theme={{
