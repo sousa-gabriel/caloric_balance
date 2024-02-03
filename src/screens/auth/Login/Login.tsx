@@ -1,6 +1,17 @@
 import React from 'react'
 import * as S from './LoginStyle'
+import { Calendar } from '../../../components/calendar/Calendar'
+import { useCalendar } from '../../../components/calendar/useCalendar'
 
 export function Login() {
-  return <S.ContainerLogin></S.ContainerLogin>
+  const { markedDates, onDayPress, interval } = useCalendar()
+  return (
+    <S.ContainerLogin>
+      <Calendar
+        markedDates={markedDates}
+        onDayPress={onDayPress}
+        StartMarkedDates={interval}
+      />
+    </S.ContainerLogin>
+  )
 }

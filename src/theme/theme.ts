@@ -1,6 +1,6 @@
 import { normalize } from '../utils/normalize'
-const isDarkMode = true
-// const isDarkMode = false
+// const isDarkMode = true
+const isDarkMode = false
 
 export const theme = {
   fonts: {
@@ -74,6 +74,7 @@ export const theme = {
     onPrimary: isDarkMode ? '#312E38' : '#FFFFFF',
     secondary: isDarkMode ? '#FFFFFF' : '#232129',
     onSecondary: isDarkMode ? '#312E38' : '#FFFFFF',
+    disabled: isDarkMode ? '#FFFFFF55' : '#23212955',
   },
   shadow: {
     shadowOpacity: 0.5,
