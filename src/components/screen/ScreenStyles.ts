@@ -7,8 +7,7 @@ interface IScreenStyle {
 }
 
 export const ScreenContainer = styled.View<IScreenStyle>`
-  padding-top: ${({ top }) => normalize(top)}px;
-  padding-bottom: ${({ bottom }) => normalize(bottom)}px;
   padding-left: ${({ theme }) => normalize(theme.spaces.sp16)}px;
   padding-right: ${({ theme }) => normalize(theme.spaces.sp16)}px;
+  flex: 1;
 `
