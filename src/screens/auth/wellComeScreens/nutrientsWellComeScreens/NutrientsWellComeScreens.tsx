@@ -1,17 +1,17 @@
 import React from 'react'
 import { Button, Roboto } from '@components'
-import { OnBoardCalories } from '@assets'
+import { OnBoardNutrients } from '@assets'
 import { normalize } from '@utils'
-import * as S from '../OnBoardScreensStyles'
+import * as S from '../WellComeScreensStyles'
 
-export const CaloriesOnBoardScreen = () => {
+export const NutrientsWellComeScreens = () => {
   return (
     <>
-      <OnBoardCalories />
+      <OnBoardNutrients />
       <S.OnBoardContainer>
-        <Roboto text="01." color="secondary" textStyles="LargeBold" />
+        <Roboto text="02." color="secondary" textStyles="LargeBold" />
         <Roboto
-          text="Aqui você tem o controle de suas Calorias."
+          text="Saiba como organizar seus macronutrientes."
           color="secondary"
           textStyles="LargeRegular"
           style={{ marginTop: normalize(30) }}

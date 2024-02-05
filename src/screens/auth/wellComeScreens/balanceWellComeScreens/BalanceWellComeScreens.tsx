@@ -2,9 +2,9 @@ import React from 'react'
 import { Button, Roboto } from '@components'
 import { OnBoardBalance } from '@assets'
 import { normalize } from '@utils'
-import * as S from '../OnBoardScreensStyles'
+import * as S from '../WellComeScreensStyles'
 
-export const BalanceOnBoardScreen = () => {
+export const BalanceWellComeScreens = () => {
   return (
     <>
       <OnBoardBalance />
