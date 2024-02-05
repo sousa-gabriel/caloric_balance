@@ -3,6 +3,7 @@ import * as S from './ButtonStyle'
 import { Roboto } from '../roboto/Roboto'
 import { IconWrapper } from '../iconWrapper/IconWrapper'
 import { IIconOptions } from '../iconWrapper/IconNames'
+import { ViewStyle } from 'react-native/types'
 
 export interface ButtonProps {
   title: string
@@ -10,6 +11,7 @@ export interface ButtonProps {
   icon?: IIconOptions
   typeButton?: 'Default' | 'ButtonLine' | 'ButtonText'
   isDisabled?: boolean
+  style?: ViewStyle
 }
 
 export function Button({
@@ -18,6 +20,7 @@ export function Button({
   icon,
   typeButton = 'Default',
   isDisabled = false,
+  style,
 }: ButtonProps) {
   const buttonColor = typeButton === 'Default' ? 'onPrimary' : 'primary'
 
@@ -28,6 +31,7 @@ export function Button({
       type={typeButton}
       activeOpacity={0.7}
       isDisabled={isDisabled}
+      style={style}
     >
       {icon && (
         <IconWrapper icon={icon} color={buttonColor} marginRight={'sp16'} />
