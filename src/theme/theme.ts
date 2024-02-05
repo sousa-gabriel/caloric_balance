@@ -1,7 +1,7 @@
 import { normalize } from '../utils/normalize'
 import { Appearance } from 'react-native'
 
-const isDarkMode = Appearance.getColorScheme() === 'dark'
+export const isDarkMode = Appearance.getColorScheme() === 'dark'
 
 export const theme = {
   fonts: {
@@ -68,6 +68,9 @@ export const theme = {
     error: '#DC1637',
     successContainer: '#C4F3DD',
     errorContainer: '#FFDFDF',
+    iconGoogle: '#DB4437',
+    iconFacebook: '#3B5998',
+    iconApple: '#000000',
 
     // Dark or Light
     background: isDarkMode ? '#312E38' : '#FFFFFF',
