@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import * as S from './ModalStyles'
 import { ModalHeader } from './components/modalHeader/ModalHeader'
-import { ModalFooter } from './components/modalFooter/ModalFooter'
+import { ButtonRow } from '../buttonRow/ButtonRow'
 
 interface IModal {
   modalVisible: boolean
@@ -10,6 +10,8 @@ interface IModal {
   children?: ReactNode
   onConfirm?: () => void
   onCancel?: () => void
+  buttonPrimaryTitle?: string
+  buttonSecondaryTitle?: string
 }
 
 export function Modal({
@@ -19,6 +21,8 @@ export function Modal({
   children,
   onCancel,
   onConfirm,
+  buttonPrimaryTitle,
+  buttonSecondaryTitle,
 }: IModal) {
   return (
     <S.ModalLib
@@ -30,7 +34,12 @@ export function Modal({
         <ModalHeader title={title} onClose={onClose} />
         <S.ModalContent>{children}</S.ModalContent>
         {(onCancel || onConfirm) && (
-          <ModalFooter onCancel={onCancel} onConfirm={onConfirm} />
+          <ButtonRow
+            buttonPrimaryTitle={buttonPrimaryTitle}
+            buttonPrimaryOnPress={onCancel}
+            buttonSecondaryTitle={buttonSecondaryTitle}
+            buttonSecondaryOnPress={onConfirm}
+          />
         )}
       </S.ModalContainer>
     </S.ModalLib>
