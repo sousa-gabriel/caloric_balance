@@ -13,42 +13,48 @@ export function ForgotPasswordScreen() {
 
   return (
     <Screen>
-      <S.Header>
-        <S.ContainerIcon>
-          <IconWrapper
-            icon="arrow-left"
-            onPress={() => {}}
+      <S.Container>
+        <S.Content>
+          <S.Header>
+            <S.ContainerIcon>
+              <IconWrapper
+                icon="arrow-left"
+                onPress={() => {}}
+                color="secondary"
+                size="sp24"
+              />
+            </S.ContainerIcon>
+            <Roboto
+              text="Esqueceu sua senha?"
+              color="secondary"
+              textStyles="MediumBold"
+              style={{ marginLeft: normalize(24) }}
+            />
+          </S.Header>
+          <Roboto
+            text="Digite seu e-mail e enviaremos as instruções para redefinição de senha"
             color="secondary"
-            size="sp24"
+            textStyles="LargeRegular"
+            style={{ marginTop: normalize(24), marginBottom: normalize(48) }}
           />
-        </S.ContainerIcon>
-        <Roboto
-          text="Esqueceu sua senha?"
-          color="secondary"
-          textStyles="MediumBold"
-          style={{ marginLeft: normalize(24) }}
+          <Input
+            label="E-mail"
+            placeholder="Digite seu e-mail"
+            onChangeText={setEmail}
+            value={email}
+          />
+          <Button
+            title="Enviar"
+            onPress={() => {}}
+            isDisabled={email.length === 5}
+            style={{ marginTop: 48 }}
+          />
+        </S.Content>
+        <S.ImageLogo
+          bottom={bottom}
+          source={isDarkMode ? LogoDark : LogoLight}
         />
-      </S.Header>
-      <Roboto
-        text="Digite seu e-mail e enviaremos as instruções para redefinição de senha"
-        color="secondary"
-        textStyles="LargeRegular"
-        style={{ marginTop: normalize(24), marginBottom: normalize(48) }}
-      />
-      <Input
-        label="E-mail"
-        placeholder="Digite seu e-mail"
-        onChangeText={setEmail}
-        value={email}
-      />
-      <Button
-        title="Enviar"
-        onPress={() => {}}
-        isDisabled={email.length === 5}
-        style={{ marginTop: 48 }}
-      />
-
-      <S.ImageLogo bottom={bottom} source={isDarkMode ? LogoDark : LogoLight} />
+      </S.Container>
     </Screen>
   )
 }

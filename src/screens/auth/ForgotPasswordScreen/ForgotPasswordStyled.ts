@@ -1,3 +1,4 @@
+import { normalize } from '@utils'
 import styled from 'styled-components/native'
 
 interface IImageLogo {
@@ -7,7 +8,16 @@ interface IImageLogo {
 export const Header = styled.View`
   justify-content: center;
   align-items: flex-start;
-  height: 100px;
+  height: ${normalize(100)}px;
+`
+
+export const Container = styled.View`
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-end;
+`
+export const Content = styled.View`
+  width: 100%;
 `
 
 export const ContainerIcon = styled.View`
@@ -15,10 +25,8 @@ export const ContainerIcon = styled.View`
   top: 0px;
 `
 export const ImageLogo = styled.Image<IImageLogo>`
-  position: absolute;
-  right: ${({ theme }) => theme.spaces.sp16}px;
-  bottom: ${({ bottom }) => bottom + 24}px;
-  width: 100px;
-  height: 100px;
+  width: ${normalize(100)}px;
+  height: ${normalize(100)}px;
+  margin-top: ${normalize(100)}px;
   resize-mode: contain;
 `
