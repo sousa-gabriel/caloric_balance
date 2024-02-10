@@ -1,41 +1,25 @@
-import { Button, IconWrapper, Input, Roboto, Screen } from '@components'
 import React, { useState } from 'react'
+import { Button, Input, Roboto, Screen, Header } from '@components'
 import * as S from './ForgotPasswordStyled'
 import { normalize } from '@utils'
 import LogoDark from '../../../assets/imagens/png/logoDark.png'
 import LogoLight from '../../../assets/imagens/png/logoLight.png'
 import { isDarkMode } from '@theme'
-import { useAppSafeArea } from '@hooks'
+import { View } from 'react-native'
 
 export function ForgotPasswordScreen() {
   const [email, setEmail] = useState('')
-  const { bottom } = useAppSafeArea()
 
   return (
     <Screen>
       <S.Container>
         <S.Content>
-          <S.Header>
-            <S.ContainerIcon>
-              <IconWrapper
-                icon="arrow-left"
-                onPress={() => {}}
-                color="secondary"
-                size="sp24"
-              />
-            </S.ContainerIcon>
-            <Roboto
-              text="Esqueceu sua senha?"
-              color="secondary"
-              textStyles="MediumBold"
-              style={{ marginLeft: normalize(24) }}
-            />
-          </S.Header>
+          <Header title="Esqueceu a senha?" />
           <Roboto
             text="Digite seu e-mail e enviaremos as instruções para redefinição de senha"
             color="secondary"
             textStyles="LargeRegular"
-            style={{ marginTop: normalize(24), marginBottom: normalize(48) }}
+            style={{ marginBottom: normalize(24) }}
           />
           <Input
             label="E-mail"
@@ -51,8 +35,8 @@ export function ForgotPasswordScreen() {
           />
         </S.Content>
         <S.ImageLogo
-          bottom={bottom}
           source={isDarkMode ? LogoDark : LogoLight}
+          style={{ resizeMode: 'contain' }}
         />
       </S.Container>
     </Screen>

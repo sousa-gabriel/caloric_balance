@@ -1,10 +1,10 @@
 import React from 'react'
-import * as S from '../../LoginStyle'
+import * as S from '../../LoginScreenStyle'
 import { IconWrapper } from '@components'
 
 export function SocialLogin() {
   return (
-    <S.ContainerButtonLoginSocial>
+    <S.ContentButtonLoginSocial>
       <S.IconCircle onPress={() => {}}>
         <IconWrapper icon="google" color="iconGoogle" size="sp24" />
       </S.IconCircle>
@@ -14,6 +14,6 @@ export function SocialLogin() {
       <S.IconCircle onPress={() => {}}>
         <IconWrapper icon="apple" color="iconApple" size="sp24" />
       </S.IconCircle>
-    </S.ContainerButtonLoginSocial>
+    </S.ContentButtonLoginSocial>
   )
 }

@@ -14,7 +14,7 @@ interface IScreen {
 }
 
 export const Screen = ({ children, scrollable = false }: IScreen) => {
-  const { bottom, top } = useAppSafeArea()
+  const { top } = useAppSafeArea()
   const Container = scrollable ? ScrollViewContainer : ViewContainer
   return (
     <KeyboardAvoidingView
@@ -22,9 +22,7 @@ export const Screen = ({ children, scrollable = false }: IScreen) => {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <Container backgroundColor={theme.colors.background}>
-        <S.ScreenContainer bottom={bottom} top={top}>
-          {children}
-        </S.ScreenContainer>
+        <S.ScreenContainer top={top}>{children}</S.ScreenContainer>
       </Container>
     </KeyboardAvoidingView>
   )
