@@ -3,7 +3,7 @@ import React from 'react'
 import { Svg, Path, Rect } from 'react-native-svg'
 import { theme } from '../../../theme/theme'
 
-export function OnBoardNutrients() {
+export function Nutrients() {
   return (
     <Svg width="393" height="350" viewBox="0 0 393 350" fill="none">
       <Rect width="393" height="350" fill={theme.colors.primary} />

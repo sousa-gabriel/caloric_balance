@@ -1,16 +1,16 @@
 import React from 'react'
-import { Login } from './screens/auth/loginScreen/Login'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme/theme'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { Routes } from './routes/Routes'
 
 function App() {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <ThemeProvider theme={theme}>
-          <Login />
+          <Routes />
         </ThemeProvider>
       </GestureHandlerRootView>
     </SafeAreaProvider>

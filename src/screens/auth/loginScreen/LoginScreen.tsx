@@ -5,10 +5,20 @@ import LogoDark from '../../../assets/imagens/png/logoDark.png'
 import LogoLight from '../../../assets/imagens/png/logoLight.png'
 import { isDarkMode } from '@theme'
 import { SocialLogin } from './components/SocialLogin/SocialLogin'
+import { useNavigation } from '@react-navigation/native'
 
 export function LoginScreen() {
+  const navigation = useNavigation()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const handleNavigationForgotPassword = () => {
+    navigation.navigate('ForgotPasswordScreen')
+  }
+
+  const handleNavigationCreateAccount = () => {
+    navigation.navigate('SignUpScreen')
+  }
 
   return (
     <Screen scrollable>
@@ -33,14 +43,14 @@ export function LoginScreen() {
           isInputPassword
         />
         <Button
-          onPress={() => {}}
+          onPress={handleNavigationForgotPassword}
           title="Esqueci minha senha"
           typeButton="ButtonText"
           style={{ justifyContent: 'flex-start' }}
         />
         <ButtonRow
           buttonPrimaryOnPress={() => {}}
-          buttonSecondaryOnPress={() => {}}
+          buttonSecondaryOnPress={handleNavigationCreateAccount}
           buttonPrimaryTitle="Entrar"
           buttonSecondaryTitle="Criar conta"
         />

@@ -1,3 +1,3 @@
-export * from './imagens/onboarding/OnBoardBalance'
-export * from './imagens/onboarding/OnBoardCalories'
-export * from './imagens/onboarding/OnBoardNutrients'
+export * from './imagens/onboarding/Balance'
+export * from './imagens/onboarding/Calories'
+export * from './imagens/onboarding/Nutrients'

@@ -1,13 +1,21 @@
 import { Button, Header, Input, Screen } from '@components'
+import { useNavigation } from '@react-navigation/native'
 import { normalize } from '@utils'
 import React, { useState } from 'react'
 
 export function SignUpScreen() {
+  const navigation = useNavigation()
   const [completeName, setCompleteName] = useState('')
   const [nickname, setNickname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+
+  const handleNavigationSuccess = () => {
+    navigation.navigate('SuccessScreen', {
+      description: 'Sua conta foi criada com sucesso!!!',
+    })
+  }
 
   return (
     <Screen scrollable>
@@ -43,7 +51,7 @@ export function SignUpScreen() {
         value={confirmPassword}
       />
       <Button
-        onPress={() => {}}
+        onPress={handleNavigationSuccess}
         title="Finalizar cadastro"
         style={{ marginTop: normalize(36) }}
       />

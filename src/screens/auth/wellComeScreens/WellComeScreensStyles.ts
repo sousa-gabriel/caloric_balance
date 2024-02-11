@@ -1,21 +1,20 @@
 import styled from 'styled-components/native'
+import { Button } from '@components'
 
-export const OnBoardContainer = styled.View`
+interface IWellComeButton {
+  buttonFinish?: boolean
+}
+
+export const WellComeContainer = styled.View`
   flex: 1;
-  padding-left: ${({ theme }) => theme.spaces.sp16}px;
-  padding-right: ${({ theme }) => theme.spaces.sp16}px;
-  margin-top: ${({ theme }) => theme.spaces.sp56}px;
+  align-items: flex-start;
+  justify-content: space-between;
 `
 
-export const OnBoardButton = styled.View`
-  position: absolute;
-  bottom: ${({ theme }) => theme.spaces.sp32}px;
-  right: ${({ theme }) => theme.spaces.sp16}px;
-`
+export const WellComeContent = styled.View``
 
-export const OnBoardButtonStart = styled.View`
-  width: 100%;
-  position: absolute;
-  bottom: ${({ theme }) => theme.spaces.sp32}px;
-  right: ${({ theme }) => theme.spaces.sp16}px;
+export const WellComeButton = styled(Button)<IWellComeButton>`
+  width: ${({ buttonFinish }) => (buttonFinish ? '100%' : '50%')};
+  margin-bottom: 32px;
+  align-self: flex-end;
 `

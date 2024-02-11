@@ -5,13 +5,15 @@ import { isDarkMode } from '@theme'
 import LogoDark from '@assets/imagens/png/logoDark.png'
 import LogoLight from '@assets/imagens/png/logoLight.png'
 import { normalize } from '@utils'
+import { TPublicParams } from 'src/routes/navigationType'
+import { useNavigation } from '@react-navigation/native'
 
-interface ISuccessScreen {
-  description: string
-  onButtonPress: () => void
-}
-
-export function SuccessScreen({ description, onButtonPress }: ISuccessScreen) {
+export function SuccessScreen({ route }: TPublicParams<'SuccessScreen'>) {
+  const { description } = route.params
+  const navigation = useNavigation()
+  const handleLoginScreen = () => {
+    navigation.navigate('LoginScreen')
+  }
   return (
     <Screen>
       <S.Container>
@@ -29,7 +31,7 @@ export function SuccessScreen({ description, onButtonPress }: ISuccessScreen) {
       </S.Container>
       <Button
         title="Voltar para o Login"
-        onPress={onButtonPress}
+        onPress={handleLoginScreen}
         style={{ marginBottom: normalize(24) }}
       />
     </Screen>

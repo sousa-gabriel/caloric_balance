@@ -5,10 +5,18 @@ import { normalize } from '@utils'
 import LogoDark from '../../../assets/imagens/png/logoDark.png'
 import LogoLight from '../../../assets/imagens/png/logoLight.png'
 import { isDarkMode } from '@theme'
-import { View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 export function ForgotPasswordScreen() {
+  const navigation = useNavigation()
   const [email, setEmail] = useState('')
+
+  const handleSuccessScreen = () => {
+    navigation.navigate('SuccessScreen', {
+      description:
+        'Verifique seu e-mail com as instruções para alterar sua senha.',
+    })
+  }
 
   return (
     <Screen>
@@ -29,8 +37,8 @@ export function ForgotPasswordScreen() {
           />
           <Button
             title="Enviar"
-            onPress={() => {}}
-            isDisabled={email.length === 5}
+            onPress={handleSuccessScreen}
+            isDisabled={email.length < 5}
             style={{ marginTop: 48 }}
           />
         </S.Content>
