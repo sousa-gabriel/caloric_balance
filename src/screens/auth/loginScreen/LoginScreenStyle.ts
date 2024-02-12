@@ -26,7 +26,7 @@ export const ContentButtonLoginSocial = styled.View`
   justify-content: space-around;
   border-top-width: 0.5px;
   border-top-color: ${({ theme }) => theme.colors.gray300};
-  margin-top: ${normalize(height > 700 ? 180 : 50)}px;
+  margin-top: ${normalize(height > 700 ? 30 : 5)}%;
   padding-top: ${({ theme }) => theme.spaces.sp24}px;
   padding-bottom: ${({ theme }) => theme.spaces.sp16}px;
 `

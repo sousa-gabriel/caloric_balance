@@ -1,15 +1,24 @@
-import { Button, Header, Input, Screen } from '@components'
+import React from 'react'
+import { Button, FormTextInput, Header, Screen } from '@components'
 import { useNavigation } from '@react-navigation/native'
 import { normalize } from '@utils'
-import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { SignUpSchemaType, signUpSchema } from './SignUpSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 export function SignUpScreen() {
   const navigation = useNavigation()
-  const [completeName, setCompleteName] = useState('')
-  const [nickname, setNickname] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const { control, formState, handleSubmit } = useForm<SignUpSchemaType>({
+    defaultValues: {
+      fullName: '',
+      nickName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+    mode: 'onChange',
+    resolver: zodResolver(signUpSchema),
+  })
 
   const handleNavigationSuccess = () => {
     navigation.navigate('SuccessScreen', {
@@ -20,39 +29,42 @@ export function SignUpScreen() {
   return (
     <Screen scrollable>
       <Header title="Criar novo conta" />
-      <Input
+      <FormTextInput
+        control={control}
+        name="fullName"
         label="Nome completo"
         placeholder="Digite seu nome completo"
-        onChangeText={setCompleteName}
-        value={completeName}
       />
-      <Input
+      <FormTextInput
+        control={control}
+        name="nickName"
         label="Apelido"
         placeholder="Digite seu Apelido"
-        onChangeText={setNickname}
-        value={nickname}
       />
-      <Input
+      <FormTextInput
+        control={control}
+        name="email"
         label="E-mail"
         placeholder="Digite seu email"
-        onChangeText={setEmail}
-        value={email}
       />
-      <Input
+      <FormTextInput
+        control={control}
+        name="password"
         label="Senha"
         placeholder="Digite seu Apelido"
-        onChangeText={setPassword}
-        value={password}
+        isInputPassword
       />
-      <Input
+      <FormTextInput
+        control={control}
+        name="confirmPassword"
         label="Confirmar senha"
         placeholder="Confirme sua senha "
-        onChangeText={setConfirmPassword}
-        value={confirmPassword}
+        isInputPassword
       />
       <Button
-        onPress={handleNavigationSuccess}
+        onPress={handleSubmit(handleNavigationSuccess)}
         title="Finalizar cadastro"
+        isDisabled={!formState.isValid}
         style={{ marginTop: normalize(36) }}
       />
     </Screen>

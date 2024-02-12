@@ -1,16 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as S from './LoginScreenStyle'
-import { Button, ButtonRow, Input, Screen } from '@components'
+import { Button, ButtonRow, FormTextInput, Screen } from '@components'
 import LogoDark from '../../../assets/imagens/png/logoDark.png'
 import LogoLight from '../../../assets/imagens/png/logoLight.png'
 import { isDarkMode } from '@theme'
 import { SocialLogin } from './components/SocialLogin/SocialLogin'
 import { useNavigation } from '@react-navigation/native'
+import { useForm } from 'react-hook-form'
+import { LoginSchemaType, loadingSchema } from './LoginScreenSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 export function LoginScreen() {
   const navigation = useNavigation()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const { control, handleSubmit } = useForm<LoginSchemaType>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    mode: 'onChange',
+    resolver: zodResolver(loadingSchema),
+  })
 
   const handleNavigationForgotPassword = () => {
     navigation.navigate('ForgotPasswordScreen')
@@ -29,17 +38,17 @@ export function LoginScreen() {
             style={{ resizeMode: 'contain' }}
           />
         </S.ContainerImageLogo>
-        <Input
+        <FormTextInput
+          control={control}
+          name="email"
           label="E-mail"
           placeholder="Digite seu e-mail"
-          onChangeText={setEmail}
-          value={email}
         />
-        <Input
+        <FormTextInput
+          control={control}
+          name="password"
           label="Senha"
           placeholder="Digite sua senha"
-          onChangeText={setPassword}
-          value={password}
           isInputPassword
         />
         <Button
@@ -49,7 +58,9 @@ export function LoginScreen() {
           style={{ justifyContent: 'flex-start' }}
         />
         <ButtonRow
-          buttonPrimaryOnPress={() => {}}
+          buttonPrimaryOnPress={handleSubmit(data => {
+            console.log(data)
+          })}
           buttonSecondaryOnPress={handleNavigationCreateAccount}
           buttonPrimaryTitle="Entrar"
           buttonSecondaryTitle="Criar conta"

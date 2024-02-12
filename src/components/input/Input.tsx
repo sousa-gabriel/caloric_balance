@@ -3,13 +3,10 @@ import * as S from './InputStyle'
 import { Roboto } from '../roboto/Roboto'
 import { theme } from '@theme'
 import { IconWrapper } from '../iconWrapper/IconWrapper'
-
-export interface IInput {
-  value: string
+import { TextInputProps } from 'react-native'
+export interface IInput extends TextInputProps {
   label: string
-  placeholder: string
   errorMessage?: string
-  onChangeText: (value: string) => void
   resetError?: () => void
   isInputPassword?: boolean
 }
@@ -61,7 +58,12 @@ export function Input({
         )}
       </S.InputRow>
       {errorMessage && (
-        <Roboto color="error" text={errorMessage} textStyles="MediumRegular" />
+        <Roboto
+          color="error"
+          text={errorMessage}
+          textStyles="MediumRegular"
+          style={{ marginBottom: 16 }}
+        />
       )}
     </S.InputContainer>
   )

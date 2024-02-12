@@ -1,21 +1,36 @@
-import React, { useState } from 'react'
-import { Button, Input, Roboto, Screen, Header } from '@components'
+import React from 'react'
+import { Button, FormTextInput, Roboto, Screen, Header } from '@components'
 import * as S from './ForgotPasswordStyled'
 import { normalize } from '@utils'
 import LogoDark from '../../../assets/imagens/png/logoDark.png'
 import LogoLight from '../../../assets/imagens/png/logoLight.png'
 import { isDarkMode } from '@theme'
 import { useNavigation } from '@react-navigation/native'
+import { useForm } from 'react-hook-form'
+import {
+  ForgotPasswordSchemaType,
+  forgotPasswordSchema,
+} from './ForgotPasswordSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 export function ForgotPasswordScreen() {
   const navigation = useNavigation()
-  const [email, setEmail] = useState('')
+  const { control, formState, handleSubmit } =
+    useForm<ForgotPasswordSchemaType>({
+      defaultValues: {
+        email: '',
+      },
+      mode: 'onChange',
+      resolver: zodResolver(forgotPasswordSchema),
+    })
 
   const handleSuccessScreen = () => {
-    navigation.navigate('SuccessScreen', {
-      description:
-        'Verifique seu e-mail com as instruções para alterar sua senha.',
-    })
+    if (formState.isValid) {
+      navigation.navigate('SuccessScreen', {
+        description:
+          'Verifique seu e-mail com as instruções para alterar sua senha.',
+      })
+    }
   }
 
   return (
@@ -29,17 +44,17 @@ export function ForgotPasswordScreen() {
             textStyles="LargeRegular"
             style={{ marginBottom: normalize(24) }}
           />
-          <Input
+          <FormTextInput
+            control={control}
+            name="email"
             label="E-mail"
             placeholder="Digite seu e-mail"
-            onChangeText={setEmail}
-            value={email}
           />
           <Button
             title="Enviar"
-            onPress={handleSuccessScreen}
-            isDisabled={email.length < 5}
+            onPress={handleSubmit(handleSuccessScreen)}
             style={{ marginTop: 48 }}
+            isDisabled={!formState.isValid}
           />
         </S.Content>
         <S.ImageLogo
