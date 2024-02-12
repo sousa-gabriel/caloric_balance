@@ -2,11 +2,13 @@ import React from 'react'
 
 import { Svg, Path, Rect } from 'react-native-svg'
 import { theme } from '../../../theme/theme'
+import { Dimensions } from 'react-native'
 
 export function Nutrients() {
+  const { width } = Dimensions.get('window')
   return (
-    <Svg width="393" height="350" viewBox="0 0 393 350" fill="none">
-      <Rect width="393" height="350" fill={theme.colors.primary} />
+    <Svg width={width} height="350" viewBox={`0 0 ${width} 350`} fill="none">
+      <Rect width={width} height="350" fill={theme.colors.primary} />
       <Path
         d="M329.502 279.885L322.637 286.625"
         stroke={theme.colors.onPrimary}
