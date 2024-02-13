@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "79867152050",
+    "project_id": "caloric-balance",
+    "storage_bucket": "caloric-balance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79867152050:android:79a38033dc29ab33362bab",
+        "android_client_info": {
+          "package_name": "com.caloric_balance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0xgjIX35E_PbyiBcOYlIQUP0Xt5qys_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

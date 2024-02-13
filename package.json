@@ -12,6 +12,8 @@
   "dependencies": {
     "@gorhom/bottom-sheet": "4.5.1",
     "@hookform/resolvers": "^3.3.4",
+    "@react-native-firebase/analytics": "^18.8.0",
+    "@react-native-firebase/app": "^18.8.0",
     "@react-navigation/native": "^6.1.10",
     "@react-navigation/native-stack": "^6.9.18",
     "babel-plugin-module-resolver": "^5.0.0",
