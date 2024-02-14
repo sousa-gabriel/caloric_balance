@@ -5,9 +5,11 @@ import { normalize } from '@utils'
 import { useForm } from 'react-hook-form'
 import { SignUpSchemaType, signUpSchema } from './SignUpSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAuth } from '@hooks'
 
 export function SignUpScreen() {
   const navigation = useNavigation()
+  const { registerWithEmail } = useAuth()
   const { control, formState, handleSubmit } = useForm<SignUpSchemaType>({
     defaultValues: {
       fullName: '',
@@ -20,9 +22,14 @@ export function SignUpScreen() {
     resolver: zodResolver(signUpSchema),
   })
 
-  const handleNavigationSuccess = () => {
-    navigation.navigate('SuccessScreen', {
-      description: 'Sua conta foi criada com sucesso!!!',
+  const handleNavigationSuccess = async ({
+    email,
+    password,
+  }: SignUpSchemaType) => {
+    await registerWithEmail(email, password).then(() => {
+      navigation.navigate('SuccessScreen', {
+        description: 'Sua conta foi criada com sucesso!!!',
+      })
     })
   }
 

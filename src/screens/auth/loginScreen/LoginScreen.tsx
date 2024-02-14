@@ -9,9 +9,11 @@ import { useNavigation } from '@react-navigation/native'
 import { useForm } from 'react-hook-form'
 import { LoginSchemaType, loadingSchema } from './LoginScreenSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAuth } from '@hooks'
 
 export function LoginScreen() {
   const navigation = useNavigation()
+  const { loginWithEmail } = useAuth()
   const { control, handleSubmit } = useForm<LoginSchemaType>({
     defaultValues: {
       email: '',
@@ -27,6 +29,12 @@ export function LoginScreen() {
 
   const handleNavigationCreateAccount = () => {
     navigation.navigate('SignUpScreen')
+  }
+
+  const handleLogin = async (data: LoginSchemaType) => {
+    await loginWithEmail(data.email, data.password).then(data => {
+      console.log('Login realizado com sucesso', data)
+    })
   }
 
   return (
@@ -58,9 +66,7 @@ export function LoginScreen() {
           style={{ justifyContent: 'flex-start' }}
         />
         <ButtonRow
-          buttonPrimaryOnPress={handleSubmit(data => {
-            console.log(data)
-          })}
+          buttonPrimaryOnPress={handleSubmit(handleLogin)}
           buttonSecondaryOnPress={handleNavigationCreateAccount}
           buttonPrimaryTitle="Entrar"
           buttonSecondaryTitle="Criar conta"

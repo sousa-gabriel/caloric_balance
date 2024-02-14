@@ -12,9 +12,11 @@ import {
   forgotPasswordSchema,
 } from './ForgotPasswordSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAuth } from '@hooks'
 
 export function ForgotPasswordScreen() {
   const navigation = useNavigation()
+  const { forgotPassword } = useAuth()
   const { control, formState, handleSubmit } =
     useForm<ForgotPasswordSchemaType>({
       defaultValues: {
@@ -24,13 +26,12 @@ export function ForgotPasswordScreen() {
       resolver: zodResolver(forgotPasswordSchema),
     })
 
-  const handleSuccessScreen = () => {
-    if (formState.isValid) {
+  const handleSuccessScreen = async ({ email }: ForgotPasswordSchemaType) => {
+    await forgotPassword(email).then(() => {
       navigation.navigate('SuccessScreen', {
-        description:
-          'Verifique seu e-mail com as instruções para alterar sua senha.',
+        description: `Verifique seu e-mail (${email}) com as instruções para alterar sua senha.`,
       })
-    }
+    })
   }
 
   return (
