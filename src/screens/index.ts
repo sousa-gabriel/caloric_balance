@@ -9,3 +9,12 @@ export * from './auth/successScreen/SuccessScreen'
 
 // private routes
 export * from './app/onBoard/genderScreen/GenderScreen'
+export * from './app/onBoard/objectiveScreen/ObjectiveScreen'
+export * from './app/onBoard/yearScreen/YearScreen'
+export * from './app/onBoard/heightScreen/HeightScreen'
+export * from './app/onBoard/weightScreen/WeightScreen'
+export * from './app/onBoard/weightObjectScreen/WeightObjectScreen'
+export * from './app/onBoard/benefitsScreen/BenefitsScreen'
+export * from './app/onBoard/calendarScreen/CalendarScreen'
+export * from './app/onBoard/activityScreen/ActivityScreen'
+export * from './app/onBoard/completeScreen/CompleteScreen'

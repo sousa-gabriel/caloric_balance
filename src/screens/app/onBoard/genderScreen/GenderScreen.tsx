@@ -2,29 +2,39 @@ import React, { useState } from 'react'
 import { Button, Roboto, Screen, Step } from '@components'
 import { Man, Woman } from '@assets'
 import { normalize } from '@utils'
-import * as S from './GenderScreenStyles'
+import * as S from '../OnBoardStyles'
+import { useNavigation } from '@react-navigation/native'
+import LottieView from 'lottie-react-native'
 
-type gender = 'Masculino' | 'Feminino'
+export type gender = 'Masculino' | 'Feminino'
 
 export function GenderScreen() {
+  const navigation = useNavigation()
   const [genderSelected, setGenderSelected] = useState<gender>('Masculino')
 
   function genderSelectedCollor(gender: gender) {
     return genderSelected === gender ? 'primary' : 'secondary'
   }
 
+  function handleNext() {
+    navigation.navigate('ObjectiveScreen', { gender: genderSelected })
+  }
+
   return (
     <Screen>
-      <Step haveGoBack={false} stepCurrent={1} maxStep={11} />
-      <S.GenderScreenContainer>
+      <Step haveGoBack={false} stepCurrent={1} maxStep={10} />
+      <S.OnBoardContainer>
         <Roboto
           text="Qual é o seu gênero?"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginTop: normalize(56) }}
         />
-        <S.GenderContainerOptions>
-          <S.GenderOption onPress={() => setGenderSelected('Masculino')}>
+        <S.OnBoardContainerOptions>
+          <S.OnBoardOption
+            onPress={() => setGenderSelected('Masculino')}
+            activeOpacity={0.7}
+          >
             <Man />
             <Roboto
               text="Masculino"
@@ -32,8 +42,11 @@ export function GenderScreen() {
               textStyles="LargeSemiBold"
               style={{ marginTop: normalize(16) }}
             />
-          </S.GenderOption>
-          <S.GenderOption onPress={() => setGenderSelected('Feminino')}>
+          </S.OnBoardOption>
+          <S.OnBoardOption
+            onPress={() => setGenderSelected('Feminino')}
+            activeOpacity={0.7}
+          >
             <Woman />
             <Roboto
               text="Feminino"
@@ -41,10 +54,22 @@ export function GenderScreen() {
               textStyles="LargeSemiBold"
               style={{ marginTop: normalize(16) }}
             />
-          </S.GenderOption>
-        </S.GenderContainerOptions>
-        <Button onPress={() => {}} title="Seguinte" />
-      </S.GenderScreenContainer>
+          </S.OnBoardOption>
+        </S.OnBoardContainerOptions>
+        <Button onPress={handleNext} title="Seguinte" />
+      </S.OnBoardContainer>
+      <LottieView
+        autoPlay
+        loop
+        source={require('../../../../assets/lottie/Fruit.json')}
+        style={{
+          width: normalize(164),
+          height: normalize(190),
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+        }}
+      />
     </Screen>
   )
 }

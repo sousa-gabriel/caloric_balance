@@ -29,11 +29,25 @@ export const useCalendar = () => {
     setInterval(startInterval)
   }
 
+  function oneDaySelected(date: IDay) {
+    let start = date
+    let end = date
+
+    const interval = generateInterval(start, end)
+    setMarkedDates(interval)
+    setStartInterval(format(start.timestamp, 'dd/MM/yyyy'))
+    setEndInterval(format(end.timestamp, 'dd/MM/yyyy'))
+
+    const startInterval = generateInterval(start, end, true)
+    setInterval(startInterval)
+  }
+
   return {
     markedDates,
     onDayPress: handleChangeDate,
     interval,
     startInterval,
     endInterval,
+    oneDaySelected: oneDaySelected,
   }
 }

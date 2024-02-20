@@ -5,7 +5,7 @@ import { PublicRoutes } from './public.routes'
 import { OnBoardRoutes } from './onBoard.routes'
 
 export function Routes() {
-  const authenticated = true
+  const authenticated = false
   return (
     <NavigationContainer>
       {authenticated ? <OnBoardRoutes /> : <PublicRoutes />}
