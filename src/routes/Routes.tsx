@@ -1,18 +1,14 @@
 import React from 'react'
-import { View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 
 import { PublicRoutes } from './public.routes'
+import { OnBoardRoutes } from './onBoard.routes'
 
 export function Routes() {
-  const authenticated = false
+  const authenticated = true
   return (
     <NavigationContainer>
-      {authenticated ? (
-        <View style={{ flex: 1, backgroundColor: 'red' }} />
-      ) : (
-        <PublicRoutes />
-      )}
+      {authenticated ? <OnBoardRoutes /> : <PublicRoutes />}
     </NavigationContainer>
   )
 }

@@ -8,3 +8,4 @@ export * from './auth/signUpScreen/SignUpScreen'
 export * from './auth/successScreen/SuccessScreen'
 
 // private routes
+export * from './app/onBoard/genderScreen/GenderScreen'
