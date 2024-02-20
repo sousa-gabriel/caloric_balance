@@ -10,17 +10,19 @@ import { useForm } from 'react-hook-form'
 import { LoginSchemaType, loadingSchema } from './LoginScreenSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useAuth } from '@hooks'
+import { Alert } from 'react-native'
 
 export function LoginScreen() {
   const navigation = useNavigation()
   const { loginWithEmail } = useAuth()
-  const { control, handleSubmit } = useForm<LoginSchemaType>({
+  const { control, handleSubmit, setError } = useForm<LoginSchemaType>({
     defaultValues: {
       email: '',
       password: '',
     },
     mode: 'onChange',
     resolver: zodResolver(loadingSchema),
+    shouldFocusError: true,
   })
 
   const handleNavigationForgotPassword = () => {
@@ -32,9 +34,24 @@ export function LoginScreen() {
   }
 
   const handleLogin = async (data: LoginSchemaType) => {
-    await loginWithEmail(data.email, data.password).then(data => {
-      console.log('Login realizado com sucesso', data)
-    })
+    navigation.navigate('GenderScreen')
+    // await loginWithEmail(data.email, data.password)
+    //   .then(data => {
+    //     Alert.alert(
+    //       'Sucesso',
+    //       `Parabens ${data.user.email} seu Login foi realizado com sucesso!!!`,
+    //     )
+    //   })
+    //   .catch(() => {
+    //     setError('email', {
+    //       type: 'manual',
+    //       message: ' ',
+    //     })
+    //     setError('password', {
+    //       type: 'manual',
+    //       message: 'Email ou senha incorretos!!!',
+    //     })
+    //   })
   }
 
   return (

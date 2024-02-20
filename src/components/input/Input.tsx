@@ -37,7 +37,7 @@ export function Input({
   return (
     <S.InputContainer>
       <Roboto text={label} color={colorInput} textStyles="LargeSemiBold" />
-      <S.InputRow color={colorInput}>
+      <S.InputRow color={colorInput} isFocused={isFocused}>
         <S.Input
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}

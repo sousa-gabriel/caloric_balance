@@ -1,10 +1,14 @@
 import { normalize } from '@utils'
 import styled from 'styled-components/native'
 
-export const Header = styled.View`
+interface IHeader {
+  haveTitle: boolean
+}
+
+export const Header = styled.View<IHeader>`
   justify-content: center;
   align-items: flex-start;
-  height: ${normalize(100)}px;
+  height: ${({ haveTitle }) => (haveTitle ? normalize(100) : normalize(50))}px;
 `
 export const ContainerIcon = styled.View`
   position: absolute;

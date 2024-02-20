@@ -12,7 +12,7 @@ export const ButtonContainer = styled.TouchableOpacity<IButtonStyle>`
   height: ${normalize(50)}px;
   width: 100%;
   border-radius: ${normalize(5)}px;
-  border-width: ${({ type }) => (type === 'ButtonLine' ? '1px' : '0px')};
+  border-width: ${({ type }) => (type === 'ButtonLine' ? 2 : 0)}px;
   border-color: ${({ theme }) => theme.colors.primary};
   justify-content: center;
   align-items: center;

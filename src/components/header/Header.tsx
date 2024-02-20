@@ -5,7 +5,7 @@ import * as S from './HeaderStyles'
 import { useNavigation } from '@react-navigation/native'
 
 interface IHeader {
-  title: string
+  title?: string
 }
 
 export function Header({ title }: IHeader) {
@@ -16,7 +16,7 @@ export function Header({ title }: IHeader) {
   }
 
   return (
-    <S.Header>
+    <S.Header haveTitle={!!title}>
       <S.ContainerIcon>
         <IconWrapper
           icon="arrow-left"
@@ -25,12 +25,14 @@ export function Header({ title }: IHeader) {
           size="sp24"
         />
       </S.ContainerIcon>
-      <Roboto
-        text={title}
-        color="secondary"
-        textStyles="MediumBold"
-        style={{ marginLeft: normalize(24) }}
-      />
+      {title && (
+        <Roboto
+          text={title}
+          color="secondary"
+          textStyles="MediumBold"
+          style={{ marginLeft: normalize(24) }}
+        />
+      )}
     </S.Header>
   )
 }

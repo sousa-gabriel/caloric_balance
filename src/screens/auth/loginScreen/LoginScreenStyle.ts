@@ -8,8 +8,8 @@ export const Container = styled.View`
   flex-grow: 1;
 `
 export const ImageLogo = styled.Image`
-  width: ${normalize(200)}px;
-  height: ${normalize(200)}px;
+  width: ${normalize(250)}px;
+  height: ${normalize(250)}px;
 `
 
 export const ContainerImageLogo = styled.View`

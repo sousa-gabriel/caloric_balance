@@ -74,7 +74,7 @@ export const theme = {
 
     // Dark or Light
     background: isDarkMode ? '#312E38' : '#FFFFFF',
-    primary: isDarkMode ? '#FF9000' : '#645C96',
+    primary: isDarkMode ? '#FF9000' : '#3377FF',
     onPrimary: isDarkMode ? '#312E38' : '#FFFFFF',
     secondary: isDarkMode ? '#FFFFFF' : '#232129',
     onSecondary: isDarkMode ? '#312E38' : '#FFFFFF',

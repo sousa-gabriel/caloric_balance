@@ -1,7 +1,7 @@
 import { Balance, Calories, Nutrients } from '@assets'
 import React, { useState } from 'react'
 import * as S from './WellComeScreensStyles'
-import { Roboto, Screen } from '@components'
+import { Roboto } from '@components'
 import { normalize } from '@utils'
 import { useNavigation } from '@react-navigation/native'
 
@@ -20,13 +20,13 @@ export function WellComeScreens() {
     },
     nutrients: {
       stepIndicator: '02.',
-      title: 'Aqui você tem o controle de suas Nutrientes.',
+      title: 'Saiba como organizar seus macronutrientes.',
       nextStep: 'balance',
       titleButton: 'Próximo',
     },
     balance: {
       stepIndicator: '03.',
-      title: 'Aqui você tem o controle de suas Balance.',
+      title: 'Utilize nossa balança para facilitar a contagem de calorias.',
       nextStep: 'finishWellCome',
       titleButton: 'Finalizar',
     },
@@ -47,33 +47,35 @@ export function WellComeScreens() {
   return (
     <>
       {stepImage[step]}
-      <Screen>
-        <S.WellComeContainer>
-          <S.WellComeContent>
-            <Roboto
-              text={stepsSelected[step].stepIndicator}
-              color="secondary"
-              textStyles="LargeBold"
-            />
-            <Roboto
-              text={stepsSelected[step].title}
-              color="secondary"
-              textStyles="LargeRegular"
-              style={{ marginTop: normalize(30) }}
-            />
-          </S.WellComeContent>
-          <S.WellComeButton
-            title={stepsSelected[step].titleButton}
-            onPress={handleNavigation}
-            typeButton={
-              stepsSelected[step].nextStep === 'finishWellCome'
-                ? 'Default'
-                : 'ButtonLine'
-            }
-            buttonFinish={stepsSelected[step].nextStep === 'finishWellCome'}
+      <S.WellComeContainer>
+        <S.WellComeContent>
+          <Roboto
+            text={stepsSelected[step].stepIndicator}
+            color="secondary"
+            textStyles="LargeBold"
           />
-        </S.WellComeContainer>
-      </Screen>
+          <Roboto
+            text={stepsSelected[step].title}
+            color="secondary"
+            textStyles="LargeRegular"
+            style={{
+              marginTop: normalize(30),
+              fontSize: normalize(20),
+              lineHeight: normalize(24),
+            }}
+          />
+        </S.WellComeContent>
+        <S.WellComeButton
+          title={stepsSelected[step].titleButton}
+          onPress={handleNavigation}
+          typeButton={
+            stepsSelected[step].nextStep === 'finishWellCome'
+              ? 'Default'
+              : 'ButtonLine'
+          }
+          buttonFinish={stepsSelected[step].nextStep === 'finishWellCome'}
+        />
+      </S.WellComeContainer>
     </>
   )
 }

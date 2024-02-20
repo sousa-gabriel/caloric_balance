@@ -1227,10 +1227,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.56.0.tgz#ef20350fec605a7f7035a01764731b2de0f3782b"
   integrity sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==
 
-"@gorhom/bottom-sheet@4.5.1":
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/@gorhom/bottom-sheet/-/bottom-sheet-4.5.1.tgz#1ac4b234a80e7dff263f0b7ac207f92e41562849"
-  integrity sha512-4Qy6hzvN32fXu2hDxDXOIS0IBGBT6huST7J7+K1V5bXemZ08KIx5ZffyLgwhCUl+CnyeG2KG6tqk6iYLkIwi7Q==
+"@gorhom/bottom-sheet@5.0.0":
+  version "5.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@gorhom/bottom-sheet/-/bottom-sheet-5.0.0-alpha.5.tgz#85335ba67e5dafe9b0952e8c095c39cda3c6800c"
+  integrity sha512-aZfqLB1j+1J3yD7ajhilbG17+quHFN5XL8PR7jrOsMbJB5nib9rVZIgOHRA0Pqhv/yjSGdX5Km7wyN+8owu5UQ==
   dependencies:
     "@gorhom/portal" "1.0.14"
     invariant "^2.2.4"
