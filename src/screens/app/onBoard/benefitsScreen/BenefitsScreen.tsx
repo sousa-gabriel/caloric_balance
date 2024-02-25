@@ -13,7 +13,7 @@ export function BenefitsScreen({ route }: AppRoutesProps<'BenefitsScreen'>) {
   const { gender, objective, age, height, weight, weightObject } = route.params
 
   function handleNext() {
-    navigation.navigate('CalendarScreen', {
+    navigation.navigate('ActivityScreen', {
       gender,
       objective,
       age,

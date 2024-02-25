@@ -5,18 +5,20 @@ import * as S from '../OnBoardStyles'
 import { useNavigation } from '@react-navigation/native'
 import { AppRoutesProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
+import { calculateBaseCalories } from './CompleteScreenSchema'
 
 export function CompleteScreen({ route }: AppRoutesProps<'CompleteScreen'>) {
   const navigation = useNavigation()
   const params = route.params
 
   function handleNext() {
-    console.log('Ir para o App', params)
+    const BasalCalories = calculateBaseCalories(params)
+    console.log(BasalCalories)
   }
 
   return (
     <Screen>
-      <Step stepCurrent={10} maxStep={10} />
+      <Step stepCurrent={9} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="Parabéns Metas Definidas, Agora vamos por a mão na massa..."

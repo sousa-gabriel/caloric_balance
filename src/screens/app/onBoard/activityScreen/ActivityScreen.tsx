@@ -10,8 +10,7 @@ export type Activity = 'Baixo' | 'Médio' | 'Alto'
 
 export function ActivityScreen({ route }: AppRoutesProps<'ActivityScreen'>) {
   const navigation = useNavigation()
-  const { gender, objective, age, height, weight, weightObject, objectiveDay } =
-    route.params
+  const { gender, objective, age, height, weight, weightObject } = route.params
 
   function handleNext(activity: Activity) {
     navigation.navigate('CompleteScreen', {
@@ -21,14 +20,13 @@ export function ActivityScreen({ route }: AppRoutesProps<'ActivityScreen'>) {
       height,
       weight,
       weightObject,
-      objectiveDay,
       activity,
     })
   }
 
   return (
     <Screen>
-      <Step stepCurrent={9} maxStep={10} />
+      <Step stepCurrent={8} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
           text="Meta de data"
