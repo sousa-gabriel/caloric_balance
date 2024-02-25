@@ -10,7 +10,6 @@ import {
   HeightScreen,
   WeightObjectScreen,
   BenefitsScreen,
-  CalendarScreen,
   ActivityScreen,
   Activity,
   CompleteScreen,
@@ -51,14 +50,6 @@ export type OnBoardRoutesParamList = {
     weight: string
     weightObject: string
   }
-  CalendarScreen: {
-    gender: gender
-    objective: objective
-    age: string
-    height: string
-    weight: string
-    weightObject: string
-  }
   ActivityScreen: {
     gender: gender
     objective: objective
@@ -66,7 +57,6 @@ export type OnBoardRoutesParamList = {
     height: string
     weight: string
     weightObject: string
-    objectiveDay: string
   }
   CompleteScreen: {
     gender: gender
@@ -75,7 +65,6 @@ export type OnBoardRoutesParamList = {
     height: string
     weight: string
     weightObject: string
-    objectiveDay: string
     activity: Activity
   }
 }
@@ -98,7 +87,6 @@ export const OnBoardRoutes = () => {
         component={WeightObjectScreen}
       />
       <Stack.Screen name={'BenefitsScreen'} component={BenefitsScreen} />
-      <Stack.Screen name={'CalendarScreen'} component={CalendarScreen} />
       <Stack.Screen name={'ActivityScreen'} component={ActivityScreen} />
       <Stack.Screen name={'CompleteScreen'} component={CompleteScreen} />
     </Stack.Navigator>
