@@ -15,6 +15,8 @@
     "common_age": "Edad",
     "common_age_placeholder": "Ingrese su edad",
     "common_Following": "Siguiente",
+    "common_weight": "Peso",
+    "common_weight_placeholder": "Ingrese su peso en kg",
     "well_come_calories": "Aprenda a calcular suas calorias diárias.",
     "well_come_nutrients": "Aprenda a calcular os nutrientes de sua dieta.",
     "well_come_balanced_diet": "Aprenda a calcular uma dieta equilibrada.",
@@ -35,6 +37,7 @@
     "success_screen_message_create_account": "Cuenta creada con éxito",
     "forgot_password_message": "Ingresa tu correo electrónico y te enviaremos instrucciones para restablecer tu contraseña",
     "forgot_password_instruction": "Verifique su correo electrónico, le enviamos instrucciones para modificar su sensación.",
-    "onboarding_year": "¿Cuál es tu edad?"
+    "onboarding_year": "¿Cuál es tu edad?",
+    "onboarding_weight": "¿Cuál es tu peso?"
   }
 }

@@ -15,6 +15,8 @@
     "common_age": "Age",
     "common_age_placeholder": "Enter your age",
     "common_Following": "Next",
+    "common_weight": "Weight",
+    "common_weight_placeholder": "Enter your weight in kg",
     "well_come_calories": "Learn how to calculate the calories of your diet.",
     "well_come_nutrients": "Learn how to calculate the nutrients of your diet.",
     "well_come_balanced_diet": "Learn how to calculate the balanced diet of your diet.",
@@ -35,6 +37,7 @@
     "success_screen_message_create_account": "Account created successfully",
     "forgot_password_message": "Enter your email and we will send you password reset instructions.",
     "forgot_password_instruction": "Check your email, we will send you instructions to change your password.",
-    "onboarding_year": "What is your age?"
+    "onboarding_year": "What is your age?",
+    "onboarding_weight": "What is your weight?"
   }
 }

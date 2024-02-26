@@ -26,14 +26,14 @@ export function WeightScreen({ route }: AppRoutesProps<'WeightScreen'>) {
       <Step stepCurrent={5} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
-          text="Qual é o seu peso atual?"
+          text="onboarding_weight"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginVertical: normalize(56) }}
         />
         <Input
-          label="Peso"
-          placeholder="Digite sua peso em Kg"
+          label="common_weight"
+          placeholder="common_weight_placeholder"
           keyboardType="numeric"
           style={{ marginBottom: normalize(42) }}
           onChangeText={setWeight}
@@ -41,7 +41,7 @@ export function WeightScreen({ route }: AppRoutesProps<'WeightScreen'>) {
         />
         <Button
           onPress={handleNext}
-          title="Seguinte"
+          title="common_Following"
           isDisabled={weight.length < 1}
         />
       </S.OnBoardContainer>

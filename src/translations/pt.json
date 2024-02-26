@@ -15,6 +15,8 @@
     "common_age": "Idade",
     "common_age_placeholder": "Digite sua idade",
     "common_Following": "Seguinte",
+    "common_weight": "Peso",
+    "common_weight_placeholder": "Digite seu peso em kg",
     "well_come_calories": "Aqui você tem o controle de suas Calorias.",
     "well_come_nutrients": "Saiba como organizar seus macronutrientes.",
     "well_come_balanced_diet": "Utilize nossa balança para facilitar a contagem de calorias.",
@@ -35,6 +37,7 @@
     "success_screen_message_create_account": "Sua conta foi criada com sucesso!!!",
     "forgot_password_message": "Digite seu e-mail e enviaremos as instruções para redefinição de senha",
     "forgot_password_instruction": "Verifique seu e-mail, enviamos as instruções para alterar sua senha.",
-    "onboarding_year": "Qual é a seu idade?"
+    "onboarding_year": "Qual é a seu idade?",
+    "onboarding_weight": "Qual é o seu peso atual?"
   }
 }
