@@ -48,6 +48,8 @@
     "onboarding_height_placeholder": "Digite sua altura em cm",
     "onboarding_gender": "Qual é o seu gênero?",
     "onboarding_gender_male": "Masculino",
-    "onboarding_gender_female": "Feminino"
+    "onboarding_gender_female": "Feminino",
+    "onboarding_congratulations": "Parabéns Metas Definidas, Agora vamos por a mão na massa...",
+    "onboarding_congratulations_button": "Ir para o App"
   }
 }

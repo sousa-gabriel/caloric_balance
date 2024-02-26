@@ -17,12 +17,14 @@ export function calculateBaseCalories({
   objective,
 }: ICalculateBaseCalories) {
   const objectiveCalories = {
-    'Perder peso': gender === 'Masculino' ? -300 : -200,
-    'Manter a forma': 0,
-    'Aumentar os músculos': gender === 'Masculino' ? 300 : 200,
+    onboarding_objective_lose_weight:
+      gender === 'onboarding_gender_male' ? -300 : -200,
+    onboarding_object_Keep_in_shape: 0,
+    onboarding_object_increase_muscles:
+      gender === 'onboarding_gender_male' ? 300 : 200,
   }
 
-  if (gender === 'Masculino') {
+  if (gender === 'onboarding_gender_male') {
     return (
       66 +
       13.7 * Number(weight) +

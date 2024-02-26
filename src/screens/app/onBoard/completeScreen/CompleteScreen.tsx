@@ -21,7 +21,7 @@ export function CompleteScreen({ route }: AppRoutesProps<'CompleteScreen'>) {
       <Step stepCurrent={9} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
-          text="Parabéns Metas Definidas, Agora vamos por a mão na massa..."
+          text="onboarding_congratulations"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginVertical: normalize(40), textAlign: 'center' }}
@@ -37,7 +37,7 @@ export function CompleteScreen({ route }: AppRoutesProps<'CompleteScreen'>) {
         />
         <Button
           onPress={handleNext}
-          title="Ir para o App"
+          title="onboarding_congratulations_button"
           style={{ marginTop: normalize(40) }}
         />
       </S.OnBoardContainer>

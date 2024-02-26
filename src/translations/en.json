@@ -48,6 +48,8 @@
     "onboarding_height_placeholder": "Enter your height in cm",
     "onboarding_gender": "What is your gender",
     "onboarding_gender_male": "Male",
-    "onboarding_gender_female": "Female"
+    "onboarding_gender_female": "Female",
+    "onboarding_congratulations": "Felicidades, Metas Definidas, Ahora manos a la obra...",
+    "onboarding_congratulations_button": "Go to app"
   }
 }
