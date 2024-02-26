@@ -39,6 +39,9 @@
     "forgot_password_instruction": "Verifique seu e-mail, enviamos as instruções para alterar sua senha.",
     "onboarding_year": "Qual é a seu idade?",
     "onboarding_weight": "Qual é o seu peso atual?",
-    "onboarding_object_weight": "Qual é o seu peso desejado?"
+    "onboarding_object_weight": "Qual é o seu peso desejado?",
+    "onboarding_objective_lose_weight": "Perder peso",
+    "onboarding_object_Keep_in_shape": "Manter a forma",
+    "onboarding_object_increase_muscles": "Aumentar os músculos"
   }
 }

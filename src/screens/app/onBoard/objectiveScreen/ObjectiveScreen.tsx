@@ -7,9 +7,9 @@ import { AppRoutesProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
 
 export type objective =
-  | 'Perder peso'
-  | 'Manter a forma'
-  | 'Aumentar os músculos'
+  | 'onboarding_objective_lose_weight'
+  | 'onboarding_object_Keep_in_shape'
+  | 'onboarding_object_increase_muscles'
 
 export function ObjectiveScreen({ route }: AppRoutesProps<'ObjectiveScreen'>) {
   const navigation = useNavigation()
@@ -33,19 +33,19 @@ export function ObjectiveScreen({ route }: AppRoutesProps<'ObjectiveScreen'>) {
           style={{ marginVertical: normalize(56) }}
         />
         <Button
-          onPress={() => handleNext('Perder peso')}
-          title="Perder peso"
+          onPress={() => handleNext('onboarding_objective_lose_weight')}
+          title="onboarding_objective_lose_weight"
           typeButton="ButtonLine"
         />
         <Button
-          onPress={() => handleNext('Manter a forma')}
-          title="Manter a forma"
+          onPress={() => handleNext('onboarding_object_Keep_in_shape')}
+          title="onboarding_object_Keep_in_shape"
           typeButton="ButtonLine"
           style={{ marginTop: normalize(56), marginBottom: normalize(56) }}
         />
         <Button
-          onPress={() => handleNext('Aumentar os músculos')}
-          title="Aumentar os músculos"
+          onPress={() => handleNext('onboarding_object_increase_muscles')}
+          title="onboarding_object_increase_muscles"
           typeButton="ButtonLine"
         />
       </S.OnBoardContainer>
