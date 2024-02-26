@@ -14,21 +14,21 @@ export function WellComeScreens() {
   const stepsSelected = {
     calories: {
       stepIndicator: '01.',
-      title: 'Aqui você tem o controle de suas Calorias.',
+      title: 'well_come_calories',
       nextStep: 'nutrients',
-      titleButton: 'Próximo',
+      titleButton: 'common_next',
     },
     nutrients: {
       stepIndicator: '02.',
-      title: 'Saiba como organizar seus macronutrientes.',
+      title: 'well_come_nutrients',
       nextStep: 'balance',
-      titleButton: 'Próximo',
+      titleButton: 'common_next',
     },
     balance: {
       stepIndicator: '03.',
-      title: 'Utilize nossa balança para facilitar a contagem de calorias.',
+      title: 'well_come_balanced_diet',
       nextStep: 'finishWellCome',
-      titleButton: 'Finalizar',
+      titleButton: 'common_finish',
     },
   }
 
@@ -53,6 +53,7 @@ export function WellComeScreens() {
             text={stepsSelected[step].stepIndicator}
             color="secondary"
             textStyles="LargeBold"
+            textNotFormatted
           />
           <Roboto
             text={stepsSelected[step].title}

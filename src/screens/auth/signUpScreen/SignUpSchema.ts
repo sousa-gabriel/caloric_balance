@@ -5,8 +5,8 @@ export const signUpSchema = z
   .object({
     fullName: z
       .string()
-      .min(10, 'nome muito curto')
-      .max(50, 'nome muito longo')
+      .min(10, 'create_account_very_short_name_error')
+      .max(50, 'create_account_very_long_username_error')
       .transform(value => {
         return value
           .split(' ')
@@ -15,19 +15,19 @@ export const signUpSchema = z
           )
           .join(' ')
       }),
-    nickName: z
+    username: z
       .string()
-      .regex(userNameRegex, 'username invalido')
+      .regex(userNameRegex, 'create_account_username_invalid_error')
       .toLowerCase(),
     email: z.string().email(),
-    password: z.string().min(8, 'minimum 8 characters'),
-    confirmPassword: z.string().min(8, 'minimum 8 characters'),
+    password: z.string().min(6, 'login_password_have_min_6_char'),
+    confirmPassword: z.string().min(6, 'login_password_have_min_6_char'),
   })
   .superRefine(({ confirmPassword, password }, ctx) => {
     if (password !== confirmPassword) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'as senhas não são iguais',
+        message: 'create_account_password_not_match_error',
         path: ['confirmPassword'],
       })
     }

@@ -1,19 +1,22 @@
 import { ThemeColors, ThemeFonts, theme } from '@theme'
 import React from 'react'
 import { Text, TextStyle } from 'react-native'
-
+import { useTranslation } from 'react-i18next'
 interface IRoboto {
   text: string
+  textNotFormatted?: boolean
   color?: ThemeColors
   textStyles?: ThemeFonts
   style?: TextStyle
 }
 export function Roboto({
   text,
+  textNotFormatted = false,
   color = 'gray700',
   textStyles = 'LargeBold',
   style,
 }: IRoboto) {
+  const { t } = useTranslation()
   const robotoFont = {
     LargeBold: theme.fonts.LargeBold,
     MediumBold: theme.fonts.MediumBold,
@@ -34,7 +37,7 @@ export function Roboto({
         ...style,
       }}
     >
-      {text}
+      {textNotFormatted ? text : t(text)}
     </Text>
   )
 }

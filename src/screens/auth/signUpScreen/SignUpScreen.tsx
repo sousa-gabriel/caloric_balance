@@ -13,7 +13,7 @@ export function SignUpScreen() {
   const { control, formState, handleSubmit } = useForm<SignUpSchemaType>({
     defaultValues: {
       fullName: '',
-      nickName: '',
+      username: '',
       email: '',
       password: '',
       confirmPassword: '',
@@ -28,49 +28,49 @@ export function SignUpScreen() {
   }: SignUpSchemaType) => {
     await registerWithEmail(email, password).then(() => {
       navigation.navigate('SuccessScreen', {
-        description: 'Sua conta foi criada com sucesso!!!',
+        description: 'success_screen_message_create_account',
       })
     })
   }
 
   return (
     <Screen scrollable>
-      <Header title="Criar novo conta" />
+      <Header title="create_account_title" />
       <FormTextInput
         control={control}
         name="fullName"
-        label="Nome completo"
-        placeholder="Digite seu nome completo"
+        label="create_account_complete_name"
+        placeholder="create_account_complete_name_placeholder"
       />
       <FormTextInput
         control={control}
-        name="nickName"
-        label="Apelido"
-        placeholder="Digite seu Apelido"
+        name="username"
+        label="create_account_username"
+        placeholder="create_account_username_placeholder"
       />
       <FormTextInput
         control={control}
         name="email"
-        label="E-mail"
-        placeholder="Digite seu email"
+        label="common_email"
+        placeholder="common_email_placeholder"
       />
       <FormTextInput
         control={control}
         name="password"
-        label="Senha"
-        placeholder="Digite seu Apelido"
+        label="common_password"
+        placeholder="common_password_placeholder"
         isInputPassword
       />
       <FormTextInput
         control={control}
         name="confirmPassword"
-        label="Confirmar senha"
-        placeholder="Confirme sua senha "
+        label="create_account_confirm_password"
+        placeholder="create_account_confirm_password_placeholder"
         isInputPassword
       />
       <Button
         onPress={handleSubmit(handleNavigationSuccess)}
-        title="Finalizar cadastro"
+        title="create_account_finalize_registration"
         isDisabled={!formState.isValid}
         style={{ marginTop: normalize(36) }}
       />

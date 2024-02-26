@@ -4,6 +4,7 @@ import { Roboto } from '../roboto/Roboto'
 import { theme } from '@theme'
 import { IconWrapper } from '../iconWrapper/IconWrapper'
 import { TextInputProps } from 'react-native'
+import { useTranslation } from 'react-i18next'
 export interface IInput extends TextInputProps {
   label: string
   errorMessage?: string
@@ -24,6 +25,7 @@ export function Input({
   const colorFocused = isFocused ? 'primary' : 'secondary'
   const colorInput = !!errorMessage ? 'error' : colorFocused
   const [isSecureText, setIsSecureText] = useState(false)
+  const { t } = useTranslation()
 
   function handleInputFocus() {
     setIsFocused(true)
@@ -42,7 +44,7 @@ export function Input({
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           color={colorInput}
-          placeholder={placeholder}
+          placeholder={t(placeholder ?? '')}
           value={value}
           onChangeText={onChangeText}
           placeholderTextColor={theme.colors.gray400}

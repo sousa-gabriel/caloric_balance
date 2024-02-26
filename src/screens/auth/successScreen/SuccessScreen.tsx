@@ -30,7 +30,7 @@ export function SuccessScreen({ route }: TPublicParams<'SuccessScreen'>) {
         />
       </S.Container>
       <Button
-        title="Voltar para o Login"
+        title="success_screen_go_back_login"
         onPress={handleLoginScreen}
         style={{ marginBottom: normalize(24) }}
       />

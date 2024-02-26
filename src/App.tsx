@@ -4,6 +4,7 @@ import { theme } from './theme/theme'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Routes } from './routes/Routes'
+import './translations/i18n'
 
 function App() {
   return (

@@ -10,7 +10,6 @@ import { useForm } from 'react-hook-form'
 import { LoginSchemaType, loadingSchema } from './LoginScreenSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useAuth } from '@hooks'
-import { Alert } from 'react-native'
 
 export function LoginScreen() {
   const navigation = useNavigation()
@@ -66,27 +65,27 @@ export function LoginScreen() {
         <FormTextInput
           control={control}
           name="email"
-          label="E-mail"
-          placeholder="Digite seu e-mail"
+          label="common_email"
+          placeholder="common_email_placeholder"
         />
         <FormTextInput
           control={control}
           name="password"
-          label="Senha"
-          placeholder="Digite sua senha"
+          label="common_password"
+          placeholder="common_password_placeholder"
           isInputPassword
         />
         <Button
           onPress={handleNavigationForgotPassword}
-          title="Esqueci minha senha"
+          title="common_forget_password"
           typeButton="ButtonText"
           style={{ justifyContent: 'flex-start' }}
         />
         <ButtonRow
           buttonPrimaryOnPress={handleSubmit(handleLogin)}
           buttonSecondaryOnPress={handleNavigationCreateAccount}
-          buttonPrimaryTitle="Entrar"
-          buttonSecondaryTitle="Criar conta"
+          buttonPrimaryTitle="common_login"
+          buttonSecondaryTitle="common_create_account"
         />
         <SocialLogin />
       </S.Container>

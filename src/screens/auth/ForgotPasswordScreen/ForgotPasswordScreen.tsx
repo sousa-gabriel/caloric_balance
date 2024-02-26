@@ -29,7 +29,7 @@ export function ForgotPasswordScreen() {
   const handleSuccessScreen = async ({ email }: ForgotPasswordSchemaType) => {
     await forgotPassword(email).then(() => {
       navigation.navigate('SuccessScreen', {
-        description: `Verifique seu e-mail (${email}) com as instruções para alterar sua senha.`,
+        description: 'forgot_password_instructions',
       })
     })
   }
@@ -38,9 +38,9 @@ export function ForgotPasswordScreen() {
     <Screen>
       <S.Container>
         <S.Content>
-          <Header title="Esqueceu a senha?" />
+          <Header title="common_forget_password" />
           <Roboto
-            text="Digite seu e-mail e enviaremos as instruções para redefinição de senha"
+            text="forgot_password_message"
             color="secondary"
             textStyles="LargeRegular"
             style={{ marginBottom: normalize(24) }}
@@ -48,11 +48,11 @@ export function ForgotPasswordScreen() {
           <FormTextInput
             control={control}
             name="email"
-            label="E-mail"
-            placeholder="Digite seu e-mail"
+            label="common_email"
+            placeholder="common_email_placeholder"
           />
           <Button
-            title="Enviar"
+            title="common_send"
             onPress={handleSubmit(handleSuccessScreen)}
             style={{ marginTop: 48 }}
             isDisabled={!formState.isValid}
