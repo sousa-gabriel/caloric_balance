@@ -50,6 +50,10 @@
     "onboarding_gender_male": "Masculino",
     "onboarding_gender_female": "Femenino",
     "onboarding_congratulations": "Congratulations, Defined Goals, Now let's get to work...",
-    "onboarding_congratulations_button": "Ir a la aplicación"
+    "onboarding_congratulations_button": "Ir a la aplicación",
+    "onboarding_benefits_title": "Comer sano puede ayudarte a alcanzar tu objetivo y tiene otros beneficios:",
+    "onboarding_benefits_1": "Reduce los riesgos de diabetes.",
+    "onboarding_benefits_2": "Normaliza la presión arterial.",
+    "onboarding_benefits_3": "Equilibra los niveles de colesterol."
   }
 }

@@ -28,7 +28,7 @@ export function BenefitsScreen({ route }: AppRoutesProps<'BenefitsScreen'>) {
       <Step stepCurrent={7} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
-          text="Uma alimentação saudável pode ajudar você a atingir sua meta e tem outros benefícios:"
+          text="onboarding_benefits_title"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginVertical: normalize(56), textAlign: 'center' }}
@@ -37,7 +37,7 @@ export function BenefitsScreen({ route }: AppRoutesProps<'BenefitsScreen'>) {
           <S.OnBoardContainerRow>
             <Hamburger />
             <Roboto
-              text="Reduz riscos de diabetes"
+              text="onboarding_benefits_1"
               color="secondary"
               textStyles="MediumRegular"
               style={{
@@ -48,7 +48,7 @@ export function BenefitsScreen({ route }: AppRoutesProps<'BenefitsScreen'>) {
           <S.OnBoardContainerRow>
             <Heart />
             <Roboto
-              text="Normaliza pressão arterial"
+              text="onboarding_benefits_2"
               color="secondary"
               textStyles="MediumRegular"
               style={{
@@ -59,7 +59,7 @@ export function BenefitsScreen({ route }: AppRoutesProps<'BenefitsScreen'>) {
           <S.OnBoardContainerRow>
             <Fruit />
             <Roboto
-              text="Equibra o nível de colesterol"
+              text="onboarding_benefits_3"
               color="secondary"
               textStyles="MediumRegular"
               style={{
@@ -71,7 +71,7 @@ export function BenefitsScreen({ route }: AppRoutesProps<'BenefitsScreen'>) {
 
         <Button
           onPress={handleNext}
-          title="Seguinte"
+          title="common_Following"
           isDisabled={weightObject.length < 1}
           style={{ marginTop: normalize(56) }}
         />

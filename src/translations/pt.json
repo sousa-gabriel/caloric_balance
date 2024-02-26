@@ -50,6 +50,10 @@
     "onboarding_gender_male": "Masculino",
     "onboarding_gender_female": "Feminino",
     "onboarding_congratulations": "Parabéns Metas Definidas, Agora vamos por a mão na massa...",
-    "onboarding_congratulations_button": "Ir para o App"
+    "onboarding_congratulations_button": "Ir para o App",
+    "onboarding_benefits_title": "Uma alimentação saudável pode ajudar você a atingir sua meta e tem outros benefícios:",
+    "onboarding_benefits_1": "Reduz riscos de diabetes.",
+    "onboarding_benefits_2": "Normaliza pressão arterial.",
+    "onboarding_benefits_3": "Equibra o nível de colesterol."
   }
 }
