@@ -54,6 +54,13 @@
     "onboarding_benefits_title": "Comer sano puede ayudarte a alcanzar tu objetivo y tiene otros beneficios:",
     "onboarding_benefits_1": "Reduce los riesgos de diabetes.",
     "onboarding_benefits_2": "Normaliza la presión arterial.",
-    "onboarding_benefits_3": "Equilibra los niveles de colesterol."
+    "onboarding_benefits_3": "Equilibra los niveles de colesterol.",
+    "onboarding_activity_title": "¿Cuál es tu nivel de actividad física?",
+    "onboarding_activity_light_title": "Bajo",
+    "onboarding_activity_light_message": "Paso la mayor parte del día sentado, sin hacer mucho esfuerzo",
+    "onboarding_activity_moderate_title": "Moderado",
+    "onboarding_activity_moderate_message": "Paso la mayor parte del día de pie, camino mucho, hago ejercicio ligero",
+    "onboarding_activity_intense": "Intenso",
+    "onboarding_activity_intense_message": "Voy al gimnasio todos los días, corro 1 km o más al día."
   }
 }

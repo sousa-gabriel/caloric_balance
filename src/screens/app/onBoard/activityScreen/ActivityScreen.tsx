@@ -29,14 +29,14 @@ export function ActivityScreen({ route }: AppRoutesProps<'ActivityScreen'>) {
       <Step stepCurrent={8} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
-          text="Meta de data"
+          text="onboarding_activity_title"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginVertical: normalize(40), textAlign: 'center' }}
         />
         <ActivityCard
-          title="Baixo"
-          description="Eu me movo apenas quando preciso pegar uma xícara de café"
+          title="onboarding_activity_light_title"
+          description="onboarding_activity_light_message"
           onPress={() => handleNext('Baixo')}
           icon={
             <LottieView
@@ -50,8 +50,8 @@ export function ActivityScreen({ route }: AppRoutesProps<'ActivityScreen'>) {
           }
         />
         <ActivityCard
-          title="Médio"
-          description="Boa parte do meu dia envolve movimento, faço academia 2 ou 3 por semana"
+          title="onboarding_activity_moderate_title"
+          description="onboarding_activity_moderate_message"
           onPress={() => handleNext('Médio')}
           icon={
             <LottieView
@@ -65,7 +65,7 @@ export function ActivityScreen({ route }: AppRoutesProps<'ActivityScreen'>) {
           }
         />
         <ActivityCard
-          title="Alto"
+          title="onboarding_activity_intense"
           description="Faço acameia todos os dias, corro 1 km ou mais por dia"
           onPress={() => handleNext('Alto')}
           icon={

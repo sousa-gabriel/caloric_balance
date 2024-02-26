@@ -54,6 +54,13 @@
     "onboarding_benefits_title": "Uma alimentação saudável pode ajudar você a atingir sua meta e tem outros benefícios:",
     "onboarding_benefits_1": "Reduz riscos de diabetes.",
     "onboarding_benefits_2": "Normaliza pressão arterial.",
-    "onboarding_benefits_3": "Equibra o nível de colesterol."
+    "onboarding_benefits_3": "Equibra o nível de colesterol.",
+    "onboarding_activity_title": "Qual a sua média de atividade física?",
+    "onboarding_activity_light_title": "Baixo",
+    "onboarding_activity_light_message": "Eu me movo apenas quando preciso pegar uma xícara de café",
+    "onboarding_activity_moderate_title": "Médio",
+    "onboarding_activity_moderate_message": "Boa parte do meu dia envolve movimento, faço academia 2 ou 3 por semana",
+    "onboarding_activity_intense": "Alto",
+    "onboarding_activity_intense_message": "Faço acameia todos os dias, corro 1 km ou mais por dia"
   }
 }

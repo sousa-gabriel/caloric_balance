@@ -54,6 +54,13 @@
     "onboarding_benefits_title": "Eating healthy can help you reach your goal and has other benefits:",
     "onboarding_benefits_1": "Reduces risks of diabetes.",
     "onboarding_benefits_2": "Normalizes blood pressure.",
-    "onboarding_benefits_3": "Balances cholesterol levels."
+    "onboarding_benefits_3": "Balances cholesterol levels.",
+    "onboarding_activity_title": "How active are you?",
+    "onboarding_activity_light_title": "Light",
+    "onboarding_activity_light_message": "I only move when I need to get a cup of coffee",
+    "onboarding_activity_moderate_title": "Moderate",
+    "onboarding_activity_moderate_message": "A good part of my day involves movement, I go to the gym 2 or 3 a week",
+    "onboarding_activity_intense": "Intenso",
+    "onboarding_activity_intense_message": "I go to the gym every day, I run 1 km or more a day"
   }
 }
