@@ -38,6 +38,7 @@
     "forgot_password_message": "Enter your email and we will send you password reset instructions.",
     "forgot_password_instruction": "Check your email, we will send you instructions to change your password.",
     "onboarding_year": "What is your age?",
-    "onboarding_weight": "What is your weight?"
+    "onboarding_weight": "What is your weight?",
+    "onboarding_object_weight": "What is your goal weight?"
   }
 }

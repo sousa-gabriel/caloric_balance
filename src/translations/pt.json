@@ -38,6 +38,7 @@
     "forgot_password_message": "Digite seu e-mail e enviaremos as instruções para redefinição de senha",
     "forgot_password_instruction": "Verifique seu e-mail, enviamos as instruções para alterar sua senha.",
     "onboarding_year": "Qual é a seu idade?",
-    "onboarding_weight": "Qual é o seu peso atual?"
+    "onboarding_weight": "Qual é o seu peso atual?",
+    "onboarding_object_weight": "Qual é o seu peso desejado?"
   }
 }

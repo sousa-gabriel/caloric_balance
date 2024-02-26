@@ -29,14 +29,14 @@ export function WeightObjectScreen({
       <Step stepCurrent={6} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
-          text="Qual é o seu peso objetivo?"
+          text="onboarding_object_weight"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginVertical: normalize(56) }}
         />
         <Input
-          label="Peso"
-          placeholder="Digite sua peso em Kg"
+          label="common_weight"
+          placeholder="common_weight_placeholder"
           keyboardType="numeric"
           style={{ marginBottom: normalize(42) }}
           onChangeText={setWeightObject}
@@ -44,7 +44,7 @@ export function WeightObjectScreen({
         />
         <Button
           onPress={handleNext}
-          title="Seguinte"
+          title="common_Following"
           isDisabled={weightObject.length < 1}
         />
       </S.OnBoardContainer>
