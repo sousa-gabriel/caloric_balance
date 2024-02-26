@@ -6,11 +6,13 @@ import * as S from '../OnBoardStyles'
 import { useNavigation } from '@react-navigation/native'
 import LottieView from 'lottie-react-native'
 
-export type gender = 'Masculino' | 'Feminino'
+export type gender = 'onboarding_gender_male' | 'onboarding_gender_female'
 
 export function GenderScreen() {
   const navigation = useNavigation()
-  const [genderSelected, setGenderSelected] = useState<gender>('Masculino')
+  const [genderSelected, setGenderSelected] = useState<gender>(
+    'onboarding_gender_male',
+  )
 
   function genderSelectedCollor(gender: gender) {
     return genderSelected === gender ? 'primary' : 'secondary'
@@ -25,38 +27,38 @@ export function GenderScreen() {
       <Step haveGoBack={false} stepCurrent={1} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
-          text="Qual é o seu gênero?"
+          text="onboarding_gender"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginTop: normalize(56) }}
         />
         <S.OnBoardContainerOptions>
           <S.OnBoardOption
-            onPress={() => setGenderSelected('Masculino')}
+            onPress={() => setGenderSelected('onboarding_gender_male')}
             activeOpacity={0.7}
           >
             <Man />
             <Roboto
-              text="Masculino"
-              color={genderSelectedCollor('Masculino')}
+              text="onboarding_gender_male"
+              color={genderSelectedCollor('onboarding_gender_male')}
               textStyles="LargeSemiBold"
               style={{ marginTop: normalize(16) }}
             />
           </S.OnBoardOption>
           <S.OnBoardOption
-            onPress={() => setGenderSelected('Feminino')}
+            onPress={() => setGenderSelected('onboarding_gender_female')}
             activeOpacity={0.7}
           >
             <Woman />
             <Roboto
-              text="Feminino"
-              color={genderSelectedCollor('Feminino')}
+              text="onboarding_gender_female"
+              color={genderSelectedCollor('onboarding_gender_female')}
               textStyles="LargeSemiBold"
               style={{ marginTop: normalize(16) }}
             />
           </S.OnBoardOption>
         </S.OnBoardContainerOptions>
-        <Button onPress={handleNext} title="Seguinte" />
+        <Button onPress={handleNext} title="common_Following" />
       </S.OnBoardContainer>
       <LottieView
         autoPlay

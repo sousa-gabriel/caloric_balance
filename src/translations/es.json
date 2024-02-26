@@ -45,6 +45,9 @@
     "onboarding_object_increase_muscles": "¿Quieres aumentar tus músculos?",
     "onboarding_height": "¿Cuál es tu altura?",
     "onboarding_height_label": "Altura",
-    "onboarding_height_placeholder": "Ingrese su altura en cm"
+    "onboarding_height_placeholder": "Ingrese su altura en cm",
+    "onboarding_gender": "¿Cuál es tu género?",
+    "onboarding_gender_male": "Masculino",
+    "onboarding_gender_female": "Femenino"
   }
 }

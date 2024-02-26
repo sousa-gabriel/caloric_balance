@@ -45,6 +45,9 @@
     "onboarding_object_increase_muscles": "Increase muscles",
     "onboarding_height": "What is your height?",
     "onboarding_height_label": "Height",
-    "onboarding_height_placeholder": "Enter your height in cm"
+    "onboarding_height_placeholder": "Enter your height in cm",
+    "onboarding_gender": "What is your gender",
+    "onboarding_gender_male": "Male",
+    "onboarding_gender_female": "Female"
   }
 }
