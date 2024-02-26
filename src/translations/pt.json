@@ -42,6 +42,9 @@
     "onboarding_object_weight": "Qual é o seu peso desejado?",
     "onboarding_objective_lose_weight": "Perder peso",
     "onboarding_object_Keep_in_shape": "Manter a forma",
-    "onboarding_object_increase_muscles": "Aumentar os músculos"
+    "onboarding_object_increase_muscles": "Aumentar os músculos",
+    "onboarding_height": "Qual é a sua altura?",
+    "onboarding_height_label": "Altura",
+    "onboarding_height_placeholder": "Digite sua altura em cm"
   }
 }

@@ -25,14 +25,14 @@ export function HeightScreen({ route }: AppRoutesProps<'HeightScreen'>) {
       <Step stepCurrent={4} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
-          text="Qual é a sua Atura?"
+          text="onboarding_height"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginVertical: normalize(56) }}
         />
         <Input
-          label="Altura"
-          placeholder="Digite sua altura em cm"
+          label="onboarding_height_label"
+          placeholder="onboarding_height_placeholder"
           keyboardType="numeric"
           style={{ marginBottom: normalize(42) }}
           onChangeText={setHeight}
@@ -40,7 +40,7 @@ export function HeightScreen({ route }: AppRoutesProps<'HeightScreen'>) {
         />
         <Button
           onPress={handleNext}
-          title="Seguinte"
+          title="common_Following"
           isDisabled={height.length < 1}
         />
         <LottieView
