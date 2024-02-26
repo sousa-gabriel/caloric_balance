@@ -12,6 +12,9 @@
     "common_email_or_password_invalid": "E-mail or password is invalid.",
     "common_email_invalid": "E-mail is invalid.",
     "common_send": "Send",
+    "common_age": "Age",
+    "common_age_placeholder": "Enter your age",
+    "common_Following": "Next",
     "well_come_calories": "Learn how to calculate the calories of your diet.",
     "well_come_nutrients": "Learn how to calculate the nutrients of your diet.",
     "well_come_balanced_diet": "Learn how to calculate the balanced diet of your diet.",
@@ -31,6 +34,7 @@
     "success_screen_go_back_login": "Go back to login",
     "success_screen_message_create_account": "Account created successfully",
     "forgot_password_message": "Enter your email and we will send you password reset instructions.",
-    "forgot_password_instruction": "Check your email, we will send you instructions to change your password."
+    "forgot_password_instruction": "Check your email, we will send you instructions to change your password.",
+    "onboarding_year": "What is your age?"
   }
 }

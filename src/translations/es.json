@@ -12,6 +12,9 @@
     "common_email_or_password_invalid": "E-mail o contraseña inválidos",
     "common_email_invalid": "E-mail inválido",
     "common_send": "Mandar",
+    "common_age": "Edad",
+    "common_age_placeholder": "Ingrese su edad",
+    "common_Following": "Siguiente",
     "well_come_calories": "Aprenda a calcular suas calorias diárias.",
     "well_come_nutrients": "Aprenda a calcular os nutrientes de sua dieta.",
     "well_come_balanced_diet": "Aprenda a calcular uma dieta equilibrada.",
@@ -31,6 +34,7 @@
     "success_screen_go_back_login": "Volver a la pantalla de inicio de sesión",
     "success_screen_message_create_account": "Cuenta creada con éxito",
     "forgot_password_message": "Ingresa tu correo electrónico y te enviaremos instrucciones para restablecer tu contraseña",
-    "forgot_password_instruction": "Verifique su correo electrónico, le enviamos instrucciones para modificar su sensación."
+    "forgot_password_instruction": "Verifique su correo electrónico, le enviamos instrucciones para modificar su sensación.",
+    "onboarding_year": "¿Cuál es tu edad?"
   }
 }

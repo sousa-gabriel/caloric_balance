@@ -24,7 +24,7 @@ export function YearScreen({ route }: AppRoutesProps<'YearScreen'>) {
       <Step stepCurrent={3} maxStep={10} />
       <S.OnBoardContainer>
         <Roboto
-          text="Qual é a seu idade?"
+          text="onboarding_year"
           color="secondary"
           textStyles="LargeSemiBold"
           style={{ marginVertical: normalize(56) }}
@@ -39,8 +39,8 @@ export function YearScreen({ route }: AppRoutesProps<'YearScreen'>) {
           }}
         />
         <Input
-          label="Idade"
-          placeholder="Digite sua idade"
+          label="common_age"
+          placeholder="common_age_placeholder"
           keyboardType="numeric"
           style={{ marginBottom: normalize(42) }}
           onChangeText={setAge}
@@ -48,7 +48,7 @@ export function YearScreen({ route }: AppRoutesProps<'YearScreen'>) {
         />
         <Button
           onPress={handleNext}
-          title="Seguinte"
+          title="common_Following"
           isDisabled={age.length < 1}
         />
       </S.OnBoardContainer>
