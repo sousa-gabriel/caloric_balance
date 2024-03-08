@@ -31,7 +31,8 @@ export const CustomBottomTabContainer = styled.View<ITabItemContainer>`
   background-color: ${({ theme }) => theme.colors.primaryContainer};
   z-index: 1;
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.primaryContainer};
+  border-top-width: 1px;
+  border-top-color: ${({ theme }) => theme.colors.primaryContainer};
   height: ${({ height }) => normalize(height)}px;
 `
 

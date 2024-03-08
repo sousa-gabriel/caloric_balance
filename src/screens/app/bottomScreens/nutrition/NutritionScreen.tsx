@@ -1,9 +1,10 @@
 import React from 'react'
-import { Roboto, Screen } from '@components'
+import { HeaderScreens, Roboto, Screen } from '@components'
 
 export function NutritionScreen() {
   return (
     <Screen>
+      <HeaderScreens />
       <Roboto text="NutritionScreen" />
     </Screen>
   )
