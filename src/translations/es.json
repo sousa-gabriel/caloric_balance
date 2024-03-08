@@ -61,6 +61,10 @@
     "onboarding_activity_moderate_title": "Moderado",
     "onboarding_activity_moderate_message": "Paso la mayor parte del día de pie, camino mucho, hago ejercicio ligero",
     "onboarding_activity_intense": "Intenso",
-    "onboarding_activity_intense_message": "Voy al gimnasio todos los días, corro 1 km o más al día."
+    "onboarding_activity_intense_message": "Voy al gimnasio todos los días, corro 1 km o más al día.",
+    "bottom_tap_home": "Home",
+    "bottom_tap_diary": "Diario",
+    "bottom_tap_nutrition": "Nutrición",
+    "bottom_tap_balance": "Báscula"
   }
 }

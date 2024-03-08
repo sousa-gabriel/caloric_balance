@@ -61,6 +61,10 @@
     "onboarding_activity_moderate_title": "Médio",
     "onboarding_activity_moderate_message": "Boa parte do meu dia envolve movimento, faço academia 2 ou 3 por semana",
     "onboarding_activity_intense": "Alto",
-    "onboarding_activity_intense_message": "Faço acameia todos os dias, corro 1 km ou mais por dia"
+    "onboarding_activity_intense_message": "Faço acameia todos os dias, corro 1 km ou mais por dia",
+    "bottom_tap_home": "Home",
+    "bottom_tap_diary": "Diário",
+    "bottom_tap_nutrition": "Nutrição",
+    "bottom_tap_balance": "Balança"
   }
 }

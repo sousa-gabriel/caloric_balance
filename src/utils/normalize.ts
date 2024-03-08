@@ -9,3 +9,5 @@ export function normalize(size: number, based = 'width') {
     based === 'height' ? size * heightBaseScale : size * widthBaseScale
   return Math.round(PixelRatio.roundToNearestPixel(newSize))
 }
+
+export { SCREEN_WIDTH, SCREEN_HEIGHT }

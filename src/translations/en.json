@@ -61,6 +61,10 @@
     "onboarding_activity_moderate_title": "Moderate",
     "onboarding_activity_moderate_message": "A good part of my day involves movement, I go to the gym 2 or 3 a week",
     "onboarding_activity_intense": "Intenso",
-    "onboarding_activity_intense_message": "I go to the gym every day, I run 1 km or more a day"
+    "onboarding_activity_intense_message": "I go to the gym every day, I run 1 km or more a day",
+    "bottom_tap_home": "Home",
+    "bottom_tap_diary": "Diary",
+    "bottom_tap_nutrition": "Nutrition",
+    "bottom_tap_balance": "Balance"
   }
 }

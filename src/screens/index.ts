@@ -17,3 +17,10 @@ export * from './app/onBoard/weightObjectScreen/WeightObjectScreen'
 export * from './app/onBoard/benefitsScreen/BenefitsScreen'
 export * from './app/onBoard/activityScreen/ActivityScreen'
 export * from './app/onBoard/completeScreen/CompleteScreen'
+
+// app routes
+export * from './app/bottomScreens/nutrition/NutritionScreen'
+export * from './app/bottomScreens/diary/DiaryScreen'
+export * from './app/bottomScreens/balance/BalanceScreen'
+export * from './app/bottomScreens/home/HomeScreen'
+export * from './app/bottomScreens/profile/ProfileScreen'

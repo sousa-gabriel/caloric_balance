@@ -74,6 +74,7 @@ export const theme = {
 
     // Dark or Light
     background: isDarkMode ? '#312E38' : '#FFFFFF',
+    primaryContainer: isDarkMode ? '#FF900055' : '#3377FF55',
     primary: isDarkMode ? '#FF9000' : '#3377FF',
     onPrimary: isDarkMode ? '#312E38' : '#FFFFFF',
     secondary: isDarkMode ? '#FFFFFF' : '#232129',
@@ -81,11 +82,11 @@ export const theme = {
     disabled: isDarkMode ? '#FFFFFF55' : '#23212955',
   },
   shadow: {
-    shadowOpacity: 0.5,
     shadowOffset: { width: 5, height: 3 },
-    shadowRadius: 2,
-    elevation: 5,
-    shadowColor: '#00000066',
+    shadowColor: '#000',
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 1,
   },
 }
 
