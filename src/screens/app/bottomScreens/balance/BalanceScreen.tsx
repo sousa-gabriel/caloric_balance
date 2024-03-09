@@ -1,11 +1,10 @@
 import React from 'react'
-import { HeaderScreens, Roboto, Screen } from '@components'
+import { HeaderScreens, Screen } from '@components'
 
 export function BalanceScreen() {
   return (
     <Screen>
-      <HeaderScreens />
-      <Roboto text="BalanceScreen" />
+      <HeaderScreens screenName="bottom_tap_balance" />
     </Screen>
   )
 }

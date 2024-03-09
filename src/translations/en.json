@@ -16,6 +16,9 @@
     "common_age_placeholder": "Enter your age",
     "common_Following": "Next",
     "common_weight": "Weight",
+    "common_breakfast": "Breakfast",
+    "common_lunch": "Lunch",
+    "common_dinner": "Dinner",
     "common_weight_placeholder": "Enter your weight in kg",
     "well_come_calories": "Learn how to calculate the calories of your diet.",
     "well_come_nutrients": "Learn how to calculate the nutrients of your diet.",
@@ -65,6 +68,11 @@
     "bottom_tap_home": "Home",
     "bottom_tap_diary": "Diary",
     "bottom_tap_nutrition": "Nutrition",
-    "bottom_tap_balance": "Balance"
+    "bottom_tap_balance": "Balance",
+    "home_screen_graph_title": "Calories consumed",
+    "graph_total_calories": "Total calories",
+    "graph_consumed_proteins": "Proteins consumed",
+    "graph_consumed_carbs": "Carbs consumed",
+    "graph_consumed_fats": "Fats consumed"
   }
 }

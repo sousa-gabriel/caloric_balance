@@ -19,6 +19,7 @@
     "@react-navigation/bottom-tabs": "^6.5.16",
     "@react-navigation/native": "^6.1.10",
     "@react-navigation/native-stack": "^6.9.18",
+    "@shopify/react-native-skia": "^0.1.241",
     "babel-plugin-module-resolver": "^5.0.0",
     "d3-shape": "^3.2.0",
     "date-fns": "^3.3.1",
@@ -40,6 +41,7 @@
     "react-native-vector-icons": "^10.0.3",
     "styled-components": "5.3.6",
     "use-latest-callback": "^0.1.9",
+    "victory-native": "^36.6.8",
     "zod": "^3.22.4"
   },
   "devDependencies": {

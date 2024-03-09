@@ -41,7 +41,7 @@ const TabItem: FC<TabProps> = ({
       height: ICON_SIZE,
       transform: [
         { translateY: withTiming(translateY) },
-        { translateX: iconPositionX - ICON_SIZE / 2 },
+        { translateX: iconPositionX - ICON_SIZE / 1.8 },
       ],
     }
   })

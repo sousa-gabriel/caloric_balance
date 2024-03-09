@@ -1,11 +1,10 @@
 import React from 'react'
-import { HeaderScreens, Roboto, Screen } from '@components'
+import { HeaderScreens, Screen } from '@components'
 
 export function DiaryScreen() {
   return (
     <Screen>
-      <HeaderScreens />
-      <Roboto text="DiaryScreen" />
+      <HeaderScreens screenName="bottom_tap_diary" />
     </Screen>
   )
 }

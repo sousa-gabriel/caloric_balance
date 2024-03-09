@@ -16,6 +16,9 @@
     "common_age_placeholder": "Ingrese su edad",
     "common_Following": "Siguiente",
     "common_weight": "Peso",
+    "common_breakfast": "Desayuno",
+    "common_lunch": "Almuerzo",
+    "common_dinner": "Cena",
     "common_weight_placeholder": "Ingrese su peso en kg",
     "well_come_calories": "Aprenda a calcular suas calorias diárias.",
     "well_come_nutrients": "Aprenda a calcular os nutrientes de sua dieta.",
@@ -65,6 +68,11 @@
     "bottom_tap_home": "Home",
     "bottom_tap_diary": "Diario",
     "bottom_tap_nutrition": "Nutrición",
-    "bottom_tap_balance": "Báscula"
+    "bottom_tap_balance": "Báscula",
+    "home_screen_graph_title": "Calorías consumidas",
+    "graph_total_calories": "Calorías totales",
+    "graph_consumed_proteins": "Proteínas consumidas",
+    "graph_consumed_carbs": "Carbohidratos consumidos",
+    "graph_consumed_fats": "Grasas consumidas"
   }
 }

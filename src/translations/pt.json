@@ -16,8 +16,11 @@
     "common_age_placeholder": "Digite sua idade",
     "common_Following": "Seguinte",
     "common_weight": "Peso",
+    "common_breakfast": "Café da Manhã",
+    "common_lunch": "Almoço",
+    "common_dinner": "Jantar",
     "common_weight_placeholder": "Digite seu peso em kg",
-    "well_come_calories": "Aqui você tem o controle de suas Calorias.",
+    "well_come_calories": "Aqui você tem o controle de suas calorias.",
     "well_come_nutrients": "Saiba como organizar seus macronutrientes.",
     "well_come_balanced_diet": "Utilize nossa balança para facilitar a contagem de calorias.",
     "login_password_have_min_6_char": "A senha deve ter no mínimo 6 caracteres",
@@ -65,6 +68,11 @@
     "bottom_tap_home": "Home",
     "bottom_tap_diary": "Diário",
     "bottom_tap_nutrition": "Nutrição",
-    "bottom_tap_balance": "Balança"
+    "bottom_tap_balance": "Balança",
+    "home_screen_graph_title": "Calorias consumidas",
+    "graph_total_calories": "Total de calorias",
+    "graph_consumed_proteins": "Proteínas consumidas",
+    "graph_consumed_carbs": "Carboidratos consumidos",
+    "graph_consumed_fats": "Gorduras consumidas"
   }
 }
