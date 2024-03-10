@@ -19,6 +19,12 @@
     "common_breakfast": "Breakfast",
     "common_lunch": "Lunch",
     "common_dinner": "Dinner",
+    "common_high": "High",
+    "common_medium": "Medium",
+    "common_low": "Low",
+    "common_proteins": "Proteins",
+    "common_carbs": "Carbs",
+    "common_fats": "Fats",
     "common_weight_placeholder": "Enter your weight in kg",
     "well_come_calories": "Learn how to calculate the calories of your diet.",
     "well_come_nutrients": "Learn how to calculate the nutrients of your diet.",
@@ -73,6 +79,11 @@
     "graph_total_calories": "Total calories",
     "graph_consumed_proteins": "Proteins consumed",
     "graph_consumed_carbs": "Carbs consumed",
-    "graph_consumed_fats": "Fats consumed"
+    "graph_consumed_fats": "Fats consumed",
+    "card_nutrition_total_consumption": "Total consumption",
+    "card_nutrition_medium_consumption": "Medium consumption",
+    "card_nutrition_high_consumption_indicator": "HIGH CONSUMPTION",
+    "card_nutrition_medium_consumption_indicator": "MEDIUM CONSUMPTION",
+    "card_nutrition_low_consumption_indicator": "LOW CONSUMPTION"
   }
 }

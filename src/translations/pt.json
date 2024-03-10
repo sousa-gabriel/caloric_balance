@@ -19,6 +19,12 @@
     "common_breakfast": "Café da Manhã",
     "common_lunch": "Almoço",
     "common_dinner": "Jantar",
+    "common_high": "Alto",
+    "common_medium": "Médio",
+    "common_low": "Baixo",
+    "common_proteins": "Proteínas",
+    "common_carbs": "Carboidratos",
+    "common_fats": "Gorduras",
     "common_weight_placeholder": "Digite seu peso em kg",
     "well_come_calories": "Aqui você tem o controle de suas calorias.",
     "well_come_nutrients": "Saiba como organizar seus macronutrientes.",
@@ -73,6 +79,11 @@
     "graph_total_calories": "Total de calorias",
     "graph_consumed_proteins": "Proteínas consumidas",
     "graph_consumed_carbs": "Carboidratos consumidos",
-    "graph_consumed_fats": "Gorduras consumidas"
+    "graph_consumed_fats": "Gorduras consumidas",
+    "card_nutrition_total_consumption": "Total de consumo",
+    "card_nutrition_medium_consumption": "Consumo médio",
+    "card_nutrition_high_consumption_indicator": "ALTO CONSUMO",
+    "card_nutrition_medium_consumption_indicator": "MÉDIO CONSUMO",
+    "card_nutrition_low_consumption_indicator": "BAIXO CONSUMO"
   }
 }

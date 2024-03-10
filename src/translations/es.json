@@ -19,6 +19,12 @@
     "common_breakfast": "Desayuno",
     "common_lunch": "Almuerzo",
     "common_dinner": "Cena",
+    "common_high": "Alto",
+    "common_medium": "Medio",
+    "common_low": "Bajo",
+    "common_proteins": "Proteínas",
+    "common_carbs": "Carbohidratos",
+    "common_fats": "Grasas",
     "common_weight_placeholder": "Ingrese su peso en kg",
     "well_come_calories": "Aprenda a calcular suas calorias diárias.",
     "well_come_nutrients": "Aprenda a calcular os nutrientes de sua dieta.",
@@ -73,6 +79,11 @@
     "graph_total_calories": "Calorías totales",
     "graph_consumed_proteins": "Proteínas consumidas",
     "graph_consumed_carbs": "Carbohidratos consumidos",
-    "graph_consumed_fats": "Grasas consumidas"
+    "graph_consumed_fats": "Grasas consumidas",
+    "card_nutrition_total_consumption": "Consumo total",
+    "card_nutrition_medium_consumption": "Consumo médio",
+    "card_nutrition_high_consumption_indicator": "ALTO CONSUMO",
+    "card_nutrition_medium_consumption_indicator": "CONSUMO MÉDIO",
+    "card_nutrition_low_consumption_indicator": "BAJO CONSUMO"
   }
 }

@@ -1,5 +1,13 @@
 import React, { useState } from 'react'
-import { Graph, HeaderScreens, IGraphData, Screen } from '@components'
+import {
+  CardNutrition,
+  Graph,
+  HeaderScreens,
+  ICardNutrition,
+  IGraphData,
+  Screen,
+} from '@components'
+import * as S from './NutritionScreenStyles'
 
 export function NutritionScreen() {
   const sumTotal = 1200
@@ -30,21 +38,46 @@ export function NutritionScreen() {
     { name: 'total', y: sumTotal - total, color: 'disabled' },
   ]
 
+  const CardNutritionData: ICardNutrition[] = [
+    {
+      title: 'common_proteins',
+      consumption: '120g',
+      consumptionLevel: 'common_high',
+      color: 'success',
+    },
+    {
+      title: 'common_carbs',
+      consumption: '200g',
+      consumptionLevel: 'common_medium',
+      color: 'primary',
+    },
+    {
+      title: 'common_fats',
+      consumption: '46g',
+      consumptionLevel: 'common_low',
+      color: 'error',
+    },
+  ]
+
   return (
-    <Screen>
+    <Screen scrollable>
       <HeaderScreens screenName="bottom_tap_nutrition" />
       <Graph
         data={dataFormatted}
         label={label}
         description={description}
         handleItemSelected={(index: number) => {
-          console.log(index)
           setLabel(index === -1 ? sumTotal : dataFormatted[index].y.toString())
           setDescription(
             index === -1 ? 'graph_total_calories' : dataFormatted[index].name,
           )
         }}
       />
+      <S.ContainerCardNutrition>
+        {CardNutritionData.map((item, index) => (
+          <CardNutrition key={index} {...item} />
+        ))}
+      </S.ContainerCardNutrition>
     </Screen>
   )
 }

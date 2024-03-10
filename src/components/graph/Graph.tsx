@@ -6,7 +6,7 @@ import { normalize } from '@utils'
 import { Roboto } from '../roboto/Roboto'
 import { ThemeColors, theme } from '@theme'
 
-interface IGraph {
+export interface IGraph {
   data: IGraphData[]
   label: string | number
   description: string
