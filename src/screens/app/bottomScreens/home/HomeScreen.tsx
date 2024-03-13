@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Screen,
   HeaderScreens,
-  Graph,
+  GraphDonut,
   Roboto,
   CardSmack,
   CardSmackTitleType,
@@ -11,43 +11,122 @@ import {
 import * as S from './HomeScreenStyles'
 
 export function HomeScreen() {
+  let mockItemsConsumed = [
+    {
+      name: 'Frango Cozido',
+      totalCalories: 117,
+      carbs: 0,
+      protein: 21.6,
+      fats: 1.4,
+      TotalWeigh: '108 gramas',
+      meal: 'Lunch',
+    },
+    {
+      name: 'Sorvete',
+      totalCalories: 105,
+      carbs: 14,
+      protein: 1.7,
+      fats: 4.5,
+      TotalWeigh: '1 bola',
+      meal: 'Dinner',
+    },
+    {
+      name: 'Ovo frito',
+      totalCalories: 97,
+      carbs: 1,
+      protein: 6.2,
+      fats: 7,
+      TotalWeigh: '1 unidade',
+      meal: 'Breakfast',
+    },
+    {
+      name: 'Arroz Cozido',
+      totalCalories: 140,
+      carbs: 30.2,
+      protein: 0,
+      fats: 3.2,
+      TotalWeigh: '108 gramas',
+      meal: 'Lunch',
+    },
+  ]
+
+  let mockUserCalorics = {
+    totalCalories: 1200,
+    carbs: 1200 * 0.5,
+    protein: 1200 * 0.3,
+    fats: 1200 * 0.2,
+  }
+
   const MockData = [
     {
       id: '1',
       title: 'common_breakfast',
-      totalCaloric: 122,
+      totalCaloric: mockItemsConsumed.reduce((acc, item) => {
+        if (item.meal === 'Breakfast') {
+          acc += item.totalCalories
+        }
+        return acc
+      }, 0),
     },
     {
       id: '2',
       title: 'common_dinner',
-      totalCaloric: 122,
+      totalCaloric: mockItemsConsumed.reduce((acc, item) => {
+        if (item.meal === 'Dinner') {
+          acc += item.totalCalories
+        }
+        return acc
+      }, 0),
     },
     {
       id: '3',
       title: 'common_lunch',
-      totalCaloric: 122,
+      totalCaloric: mockItemsConsumed.reduce((acc, item) => {
+        if (item.meal === 'Lunch') {
+          acc += item.totalCalories
+        }
+        return acc
+      }, 0),
     },
   ]
-  // Total vem do valor total de calorias que o usuário pode consumir por dia
+
+  let mockTotalUserConsumed = mockItemsConsumed.reduce(
+    (acc, item) => {
+      acc.carbs += item.carbs
+      acc.protein += item.protein
+      acc.fats += item.fats
+      return acc
+    },
+    {
+      carbs: 0,
+      protein: 0,
+      fats: 0,
+    },
+  )
+  const totalCaloric =
+    mockTotalUserConsumed.carbs +
+    mockTotalUserConsumed.protein +
+    mockTotalUserConsumed.fats
+
   const mockDataGraph: IGraphData[] = [
     {
       name: 'consumed',
-      y: MockData.reduce((acc, item) => acc + item.totalCaloric, 0),
+      y: Number(totalCaloric.toFixed(0)),
       color: 'primary',
     },
-    { name: 'total', y: 1200, color: 'gray300' },
+    { name: 'total', y: mockUserCalorics.totalCalories, color: 'gray300' },
   ]
 
   return (
     <Screen scrollable>
       <HeaderScreens screenName="bottom_tap_home" />
-      <Graph
+      <GraphDonut
         data={mockDataGraph}
         label={`${mockDataGraph[0].y}/${mockDataGraph[1].y}`}
         description="home_screen_graph_title"
       />
       <Roboto
-        text="Acompanhe seu de progresso diário:"
+        text="home_screen_sub_title"
         textStyles="LargeRegular"
         color="primary"
       />

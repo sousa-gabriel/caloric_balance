@@ -61,7 +61,7 @@ export const CustomBottomTab: FC<BottomTabBarProps> = ({
   }
 
   return (
-    <S.CustomBottomTabContainer style={{ ...theme.shadow }} height={tHeight}>
+    <S.CustomBottomTabContainer style={{ ...theme.shadow }}>
       <Svg width={SCREEN_WIDTH} height={tHeight}>
         <AnimatedPath
           fill={theme.colors.onPrimary}

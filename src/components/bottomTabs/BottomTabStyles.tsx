@@ -1,7 +1,8 @@
 import styled from 'styled-components/native'
 import Animated from 'react-native-reanimated'
-import { SCREEN_WIDTH, normalize } from '@utils'
+import { SCREEN_WIDTH, normalize, SCREEN_HEIGHT } from '@utils'
 
+const isNotTablet = SCREEN_WIDTH / SCREEN_HEIGHT < 0.6
 interface ITabItemContainer {
   height: number
 }
@@ -25,7 +26,7 @@ export const LabelContainer = styled(Animated.View)`
   width: ${SCREEN_WIDTH / 5}px;
 `
 
-export const CustomBottomTabContainer = styled.View<ITabItemContainer>`
+export const CustomBottomTabContainer = styled.View`
   position: absolute;
   bottom: 0;
   background-color: ${({ theme }) => theme.colors.primaryContainer};
@@ -33,7 +34,6 @@ export const CustomBottomTabContainer = styled.View<ITabItemContainer>`
   width: 100%;
   border-top-width: 1px;
   border-top-color: ${({ theme }) => theme.colors.primaryContainer};
-  height: ${({ height }) => normalize(height)}px;
 `
 
 export const CustomTabItemsContainer = styled.View<ITabItemContainer>`
@@ -45,11 +45,11 @@ export const CustomTabItemsContainer = styled.View<ITabItemContainer>`
 
 export const CircleContainer = styled(Animated.View)<ICircleContainerSize>`
   position: absolute;
-  top: -${normalize(45)}px;
-  width: ${({ circleContainerSize }) => normalize(circleContainerSize)}px;
+  top: -${isNotTablet ? normalize(45) : normalize(30)}px;
+  width: ${normalize(50)}px;
   border-radius: ${({ circleContainerSize }) =>
     normalize(circleContainerSize) / 2}px;
-  height: ${({ circleContainerSize }) => normalize(circleContainerSize)}px;
+  height: ${normalize(50)}px;
   background-color: ${({ theme }) => theme.colors.primary};
   justify-content: center;
   align-items: center;

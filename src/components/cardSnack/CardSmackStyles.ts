@@ -6,7 +6,7 @@ export const ContainerCardSmack = styled.TouchableOpacity`
   width: 100%;
   border-radius: ${normalize(10)}px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.primary};
+  border-color: ${({ theme }) => theme.colors.gray400};
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

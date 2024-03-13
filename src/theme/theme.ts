@@ -79,7 +79,7 @@ export const theme = {
     primaryContainer: isDarkMode ? '#FF900055' : '#FF900055',
     primary: isDarkMode ? '#FF9000' : '#FF9000',
     onPrimary: isDarkMode ? '#312E38' : '#FFFFFF',
-    secondary: isDarkMode ? '#FFFFFF' : '#232129',
+    secondary: isDarkMode ? '#E1E1E1' : '#232129',
     onSecondary: isDarkMode ? '#312E38' : '#FFFFFF',
     disabled: isDarkMode ? '#FFFFFF55' : '#23212955',
   },

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Dimensions, View } from 'react-native'
 import { VictoryPie } from 'victory-native'
-import * as S from './GraphStyles'
+import * as S from './GraphDonutStyles'
 import { normalize } from '@utils'
 import { Roboto } from '../roboto/Roboto'
 import { ThemeColors, theme } from '@theme'
@@ -19,7 +19,7 @@ export interface IGraphData {
   color: ThemeColors
 }
 
-export function Graph({
+export function GraphDonut({
   data,
   description,
   label,
@@ -37,7 +37,6 @@ export function Graph({
   return (
     <S.Container>
       <VictoryPie
-        animate={true}
         data={data}
         labelComponent={<View />}
         radius={({ datum }) =>
