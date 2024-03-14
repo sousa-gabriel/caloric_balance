@@ -45,7 +45,7 @@ export const CustomTabItemsContainer = styled.View<ITabItemContainer>`
 
 export const CircleContainer = styled(Animated.View)<ICircleContainerSize>`
   position: absolute;
-  top: -${isNotTablet ? normalize(45) : normalize(30)}px;
+  top: -${isNotTablet ? normalize(45) : normalize(35)}px;
   width: ${normalize(50)}px;
   border-radius: ${({ circleContainerSize }) =>
     normalize(circleContainerSize) / 2}px;

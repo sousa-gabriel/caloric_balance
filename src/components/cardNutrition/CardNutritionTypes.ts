@@ -1,7 +1,10 @@
 import { ThemeColors } from '@theme'
 
 type IConsumptionLevel = 'common_high' | 'common_medium' | 'common_low'
-type ITitleCardNutrition = 'common_proteins' | 'common_carbs' | 'common_fats'
+export type ITitleCardNutrition =
+  | 'common_proteins'
+  | 'common_carbs'
+  | 'common_fats'
 
 export interface ICardNutrition {
   title: ITitleCardNutrition

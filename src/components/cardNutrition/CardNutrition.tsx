@@ -1,6 +1,7 @@
+import { useNavigation } from '@react-navigation/native'
 import { Roboto } from '../roboto/Roboto'
 import * as S from './CardNutritionStyles'
-import { ICardNutrition } from './CardNutritionTypes'
+import { ICardNutrition, ITitleCardNutrition } from './CardNutritionTypes'
 
 export const CardNutrition = ({
   color,
@@ -8,6 +9,7 @@ export const CardNutrition = ({
   consumptionLevel,
   title,
 }: ICardNutrition) => {
+  const navigation = useNavigation()
   const isMedium =
     consumptionLevel === 'common_high' || consumptionLevel === 'common_medium'
   const isHigh = consumptionLevel === 'common_high'
@@ -23,8 +25,15 @@ export const CardNutrition = ({
     }
   }
 
+  function handleNavigation(title: ITitleCardNutrition) {
+    navigation.navigate('NutritionDetailScreen', { title: title })
+  }
+
   return (
-    <S.CardNutritionContainer>
+    <S.CardNutritionContainer
+      onPress={() => handleNavigation(title)}
+      activeOpacity={0.7}
+    >
       <S.CollorIndicator color={color} />
       <S.CardNutritionContent>
         <S.CardNutrition>

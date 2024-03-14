@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   CardNutrition,
-  GraphDonut,
   HeaderScreens,
   ICardNutrition,
-  IGraphData,
   Screen,
 } from '@components'
 import * as S from './NutritionScreenStyles'

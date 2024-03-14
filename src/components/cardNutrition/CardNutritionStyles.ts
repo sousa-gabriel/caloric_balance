@@ -6,7 +6,7 @@ interface IIndicator {
   color: ThemeColors
 }
 
-export const CardNutritionContainer = styled.View`
+export const CardNutritionContainer = styled.TouchableOpacity`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.background};
   border-width: 1px;

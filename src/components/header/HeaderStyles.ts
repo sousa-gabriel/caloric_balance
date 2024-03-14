@@ -8,7 +8,7 @@ interface IHeader {
 export const Header = styled.View<IHeader>`
   justify-content: center;
   align-items: flex-start;
-  height: ${({ haveTitle }) => (haveTitle ? normalize(100) : normalize(50))}px;
+  height: ${({ haveTitle }) => (haveTitle ? normalize(150) : normalize(50))}px;
 `
 export const ContainerIcon = styled.View`
   position: absolute;

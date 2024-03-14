@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native'
 import { VictoryPie } from 'victory-native'
 import * as S from './GraphPieStyles'
 import { ThemeColors, theme } from '@theme'
-import { SCREEN_HEIGHT, SCREEN_WIDTH } from '@utils'
+import { SCREEN_HEIGHT, SCREEN_WIDTH, normalize } from '@utils'
 
 export interface IGraphPie {
   data: IGraphPieItem[]
@@ -21,7 +21,7 @@ export function GraphPie({ data }: IGraphPie) {
   const [orientation, setOrientation] = useState<'width' | 'height'>('width')
   let colorScales = data.map(item => theme.colors[item.color])
   const isNotTablet = SCREEN_WIDTH / SCREEN_HEIGHT < 0.6
-  const size = isNotTablet ? 100 : 400
+  const size = isNotTablet ? 100 : 300
 
   useEffect(() => {
     Dimensions.addEventListener('change', ({ window: { width, height } }) => {
@@ -39,13 +39,13 @@ export function GraphPie({ data }: IGraphPie) {
         labelPlacement={'vertical'}
         width={
           orientation === 'width'
-            ? Dimensions.get('window').width - size
-            : Dimensions.get('window').height - size
+            ? Dimensions.get('window').width - normalize(size)
+            : Dimensions.get('window').height - normalize(size)
         }
         height={
           orientation === 'width'
-            ? Dimensions.get('window').width - size
-            : Dimensions.get('window').height - size
+            ? Dimensions.get('window').width - normalize(size)
+            : Dimensions.get('window').height - normalize(size)
         }
         style={{
           labels: {

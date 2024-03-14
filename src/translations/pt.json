@@ -87,6 +87,9 @@
     "card_nutrition_medium_consumption": "Consumo médio",
     "card_nutrition_high_consumption_indicator": "ALTO CONSUMO",
     "card_nutrition_medium_consumption_indicator": "MÉDIO CONSUMO",
-    "card_nutrition_low_consumption_indicator": "BAIXO CONSUMO"
+    "card_nutrition_low_consumption_indicator": "BAIXO CONSUMO",
+    "nutrition_detail_title_proteins": "Receitas com suas proteinas favoritas",
+    "nutrition_detail_title_carbs": "Receitas com seus carboidratos favoritos",
+    "nutrition_detail_title_fats": "Receitas com suas gorduras favoritas"
   }
 }
