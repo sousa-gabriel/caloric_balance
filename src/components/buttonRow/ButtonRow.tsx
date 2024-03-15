@@ -7,6 +7,8 @@ export interface ButtonRowProps {
   buttonPrimaryOnPress?: () => void
   buttonSecondaryTitle?: string
   buttonSecondaryOnPress?: () => void
+  primaryTypeButton?: 'Default' | 'ButtonLine' | 'ButtonText'
+  secondaryTypeButton?: 'Default' | 'ButtonLine' | 'ButtonText'
 }
 
 export function ButtonRow({
@@ -14,6 +16,8 @@ export function ButtonRow({
   buttonSecondaryTitle,
   buttonPrimaryOnPress,
   buttonSecondaryOnPress,
+  primaryTypeButton,
+  secondaryTypeButton,
 }: ButtonRowProps) {
   return (
     <S.ContainerButton>
@@ -22,7 +26,7 @@ export function ButtonRow({
           <Button
             onPress={buttonPrimaryOnPress}
             title={buttonPrimaryTitle}
-            typeButton={'Default'}
+            typeButton={primaryTypeButton ?? 'Default'}
           />
         )}
       </S.ContentButton>
@@ -32,7 +36,7 @@ export function ButtonRow({
           <Button
             onPress={buttonSecondaryOnPress}
             title={buttonSecondaryTitle}
-            typeButton={'ButtonLine'}
+            typeButton={secondaryTypeButton ?? 'ButtonLine'}
           />
         </S.ContentButton>
       )}

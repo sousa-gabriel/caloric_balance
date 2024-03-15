@@ -7,7 +7,7 @@ import { normalize } from '@utils'
 
 interface IGraphBarHorizontal {
   title: string
-  linkDetails?: () => void
+  onSelected: () => void
   totalPercentage: number
   color: ThemeColors
   consumed: number
@@ -16,7 +16,7 @@ interface IGraphBarHorizontal {
 
 export function GraphBarHorizontal({
   title,
-  linkDetails,
+  onSelected,
   totalPercentage,
   color,
   consumed,
@@ -27,7 +27,7 @@ export function GraphBarHorizontal({
       <S.Row>
         <Roboto text={title} textStyles="SmallBold" color="secondary" />
         <Button
-          onPress={() => linkDetails}
+          onPress={onSelected}
           title="common_detail"
           typeButton="ButtonText"
           style={{ width: normalize(80) }}

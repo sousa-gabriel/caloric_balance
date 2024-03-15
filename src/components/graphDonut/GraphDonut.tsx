@@ -9,8 +9,11 @@ import { ThemeColors, theme } from '@theme'
 export interface IGraph {
   data: IGraphData[]
   label: string | number
-  description: string
+  description?: string
   handleItemSelected?: (index: number) => void
+  size?: number
+  sizeGraph?: number
+  internalRadius?: number
 }
 
 export interface IGraphData {
@@ -24,6 +27,9 @@ export function GraphDonut({
   description,
   label,
   handleItemSelected,
+  size = 100,
+  sizeGraph = 300,
+  internalRadius,
 }: IGraph) {
   const [orientation, setOrientation] = useState<'width' | 'height'>('width')
   let colorScales = data.map(item => theme.colors[item.color])
@@ -35,30 +41,32 @@ export function GraphDonut({
   }, [])
 
   return (
-    <S.Container>
+    <S.Container sizeGraph={sizeGraph}>
       <VictoryPie
         data={data}
         labelComponent={<View />}
         radius={({ datum }) =>
           datum.name !== 'total'
-            ? normalize(130, orientation)
-            : normalize(125, orientation)
+            ? normalize(normalize(size + 30), orientation)
+            : normalize(normalize(size + 25), orientation)
         }
         innerRadius={({ datum }) =>
-          datum.name !== 'total'
-            ? normalize(95, orientation)
-            : normalize(100, orientation)
+          internalRadius
+            ? normalize(internalRadius)
+            : datum.name !== 'total'
+            ? normalize(size - 5, orientation)
+            : normalize(size, orientation)
         }
-        labelRadius={100}
+        labelRadius={normalize(size)}
         width={
           orientation === 'width'
-            ? Dimensions.get('window').width - 100
-            : Dimensions.get('window').height - 100
+            ? Dimensions.get('window').width - normalize(size)
+            : Dimensions.get('window').height - normalize(size)
         }
         height={
           orientation === 'width'
-            ? Dimensions.get('window').width - 100
-            : Dimensions.get('window').height - 100
+            ? Dimensions.get('window').width - normalize(size)
+            : Dimensions.get('window').height - normalize(size)
         }
         colorScale={colorScales}
         events={[
@@ -86,14 +94,20 @@ export function GraphDonut({
         <Roboto
           text={label.toString()}
           color="secondary"
-          style={{ textAlign: 'center' }}
+          style={{ textAlign: 'center', fontSize: normalize(24) }}
+          textStyles={description ? 'LargeSemiBold' : 'MediumRegular'}
         />
-        <Roboto
-          text={description}
-          color="secondary"
-          textStyles="LargeRegular"
-          style={{ marginTop: normalize(10, orientation), textAlign: 'center' }}
-        />
+        {description && (
+          <Roboto
+            text={description}
+            color="secondary"
+            textStyles="LargeRegular"
+            style={{
+              marginTop: normalize(10, orientation),
+              textAlign: 'center',
+            }}
+          />
+        )}
       </S.CenterGraph>
     </S.Container>
   )

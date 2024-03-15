@@ -1,12 +1,16 @@
 import { normalize } from '@utils'
 import styled from 'styled-components/native'
 
-export const Container = styled.View`
+interface IGraphDonutContainer {
+  sizeGraph: number
+}
+
+export const Container = styled.View<IGraphDonutContainer>`
   margin-top: ${normalize(10)}px;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: ${normalize(300)}px;
+  height: ${({ sizeGraph }) => normalize(sizeGraph)}px;
 `
 
 export const CenterGraph = styled.TouchableOpacity`

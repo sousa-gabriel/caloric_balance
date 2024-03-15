@@ -5,14 +5,15 @@ import { isDarkMode } from '@theme'
 import LogoDark from '@assets/imagens/png/logoDark.png'
 import LogoLight from '@assets/imagens/png/logoLight.png'
 import { normalize } from '@utils'
-import { TPublicParams } from 'src/routes/navigationType'
-import { useNavigation } from '@react-navigation/native'
+import { AppRoutesProps, TPublicParams } from 'src/routes/navigationType'
 
-export function SuccessScreen({ route }: TPublicParams<'SuccessScreen'>) {
+export function SuccessScreen({
+  route,
+  navigation,
+}: TPublicParams<'SuccessScreen'> | AppRoutesProps<'SuccessScreen'>) {
   const { description } = route.params
-  const navigation = useNavigation()
   const handleLoginScreen = () => {
-    navigation.navigate('LoginScreen')
+    navigation.popToTop(), navigation.canGoBack() && navigation.goBack()
   }
   return (
     <Screen>
@@ -25,12 +26,13 @@ export function SuccessScreen({ route }: TPublicParams<'SuccessScreen'>) {
         </S.ContainerImageLogo>
         <Roboto
           text={description}
-          textStyles="LargeSemiBold"
+          textStyles="LargeBold"
           color="secondary"
+          style={{ marginTop: 60 }}
         />
       </S.Container>
       <Button
-        title="success_screen_go_back_login"
+        title="success_screen_go_back_start"
         onPress={handleLoginScreen}
         style={{ marginBottom: normalize(24) }}
       />

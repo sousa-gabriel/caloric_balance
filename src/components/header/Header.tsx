@@ -6,9 +6,10 @@ import { useNavigation } from '@react-navigation/native'
 
 interface IHeader {
   title?: string
+  headerSize?: number
 }
 
-export function Header({ title }: IHeader) {
+export function Header({ title, headerSize = 150 }: IHeader) {
   const navigation = useNavigation()
 
   const handleGoBack = () => {
@@ -16,7 +17,7 @@ export function Header({ title }: IHeader) {
   }
 
   return (
-    <S.Header haveTitle={!!title}>
+    <S.Header haveTitle={!!title} headerSize={headerSize}>
       <S.ContainerIcon>
         <IconWrapper
           icon="arrow-left"

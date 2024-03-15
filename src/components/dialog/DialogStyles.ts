@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 import Modal from 'react-native-modal'
-import { normalize } from '../../utils/normalize'
+import { normalize, SCREEN_WIDTH } from '../../utils/normalize'
 
 export const DialogContainer = styled(Modal)`
   margin: 0px ${({ theme }) => theme.spaces.sp16}px;
@@ -9,6 +9,7 @@ export const DialogContainer = styled(Modal)`
 `
 
 export const DialogContent = styled.View`
+  width: ${({ theme }) => SCREEN_WIDTH - theme.spaces.sp32}px;
   padding: ${({ theme }) => theme.spaces.sp16}px;
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 10px;

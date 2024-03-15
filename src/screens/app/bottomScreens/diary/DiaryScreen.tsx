@@ -8,10 +8,13 @@ import {
 } from '@components'
 import { ThemeColors } from '@theme'
 import * as S from './DiaryScreenStyles'
+import { useNavigation } from '@react-navigation/native'
 
 export function DiaryScreen() {
+  const navigation = useNavigation()
   let mockItemsConsumed = [
     {
+      id: '1',
       name: 'Frango Cozido',
       totalCalories: 117,
       carbs: 0,
@@ -21,6 +24,7 @@ export function DiaryScreen() {
       meal: 'Lunch',
     },
     {
+      id: '2',
       name: 'Sorvete',
       totalCalories: 105,
       carbs: 14,
@@ -30,6 +34,7 @@ export function DiaryScreen() {
       meal: 'Dinner',
     },
     {
+      id: '3',
       name: 'Ovo frito',
       totalCalories: 97,
       carbs: 1,
@@ -39,6 +44,7 @@ export function DiaryScreen() {
       meal: 'Breakfast',
     },
     {
+      id: '4',
       name: 'Arroz Cozido',
       totalCalories: 140,
       carbs: 30.2,
@@ -94,6 +100,17 @@ export function DiaryScreen() {
     },
   ]
 
+  function handleNavigateToDiaryDetails(name: string) {
+    navigation.navigate('DiaryDetailsScreen', {
+      macroNutrients: mockItemsConsumed,
+      title: name,
+    })
+  }
+
+  function handleNavigateToNewDiary() {
+    navigation.navigate('DiaryNewItemScreen')
+  }
+
   return (
     <>
       <Screen scrollable>
@@ -108,11 +125,15 @@ export function DiaryScreen() {
               key={item.name}
               consumed={item.consumed}
               total={item.total}
+              onSelected={() => handleNavigateToDiaryDetails(item.name)}
             />
           ))}
         </S.ContainerGraph>
       </Screen>
-      <S.ButtonAdd title="common_add_foods" onPress={() => {}} />
+      <S.ButtonAdd
+        title="common_add_foods"
+        onPress={handleNavigateToNewDiary}
+      />
     </>
   )
 }
