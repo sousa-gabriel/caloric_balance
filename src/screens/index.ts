@@ -28,3 +28,4 @@ export * from './app/bottomScreens/nutrition/nutritionRecipe/NutritionRecipeScre
 export * from './app/bottomScreens/diary/diaryDetails/DiaryDetailsScreen'
 export * from './app/bottomScreens/diary/diaryNewItem/DiaryNewItemScreen'
 export * from './app/bottomScreens/diary/diaryItem/DiaryItemScreen'
+export * from './app/bottomScreens/home/ProgressScreen/ProgressScreen'

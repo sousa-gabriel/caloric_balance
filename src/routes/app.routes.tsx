@@ -7,6 +7,7 @@ import {
   DiaryNewItemScreen,
   NutritionDetailScreen,
   NutritionRecipeScreen,
+  ProgressScreen,
   SuccessScreen,
 } from '@screens'
 import { IMacroNutrientsCard, ITitleCardNutrition } from '@components'
@@ -31,6 +32,9 @@ export type AppRoutesParamList = {
   SuccessScreen: {
     description: string
   }
+  ProgressScreen: {
+    macroNutrients: IMacroNutrientsCard[]
+  }
 }
 
 const Stack = createNativeStackNavigator<AppRoutesParamList>()
@@ -51,6 +55,7 @@ export const AppRoutes = () => {
       <Stack.Screen name="DiaryNewItemScreen" component={DiaryNewItemScreen} />
       <Stack.Screen name="DiaryItemScreen" component={DiaryItemScreen} />
       <Stack.Screen name="SuccessScreen" component={SuccessScreen} />
+      <Stack.Screen name="ProgressScreen" component={ProgressScreen} />
     </Stack.Navigator>
   )
 }

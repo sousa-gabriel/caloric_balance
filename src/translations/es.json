@@ -98,6 +98,7 @@
     "card_nutrition_low_consumption_indicator": "BAJO CONSUMO",
     "nutrition_detail_title_proteins": "Recetas con tus proteínas favoritas",
     "nutrition_detail_title_carbs": "Recetas con tus carbohidratos favoritos",
-    "nutrition_detail_title_fats": "Recetas con tus grasas favoritas"
+    "nutrition_detail_title_fats": "Recetas con tus grasas favoritas",
+    "progress_screen_title": "Progreso diario"
   }
 }

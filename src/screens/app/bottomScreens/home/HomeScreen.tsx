@@ -3,16 +3,19 @@ import {
   Screen,
   HeaderScreens,
   GraphDonut,
-  Roboto,
   CardSmack,
   CardSmackTitleType,
   IGraphData,
+  Button,
 } from '@components'
 import * as S from './HomeScreenStyles'
+import { useNavigation } from '@react-navigation/native'
 
 export function HomeScreen() {
+  const navigation = useNavigation()
   let mockItemsConsumed = [
     {
+      id: '1',
       name: 'Frango Cozido',
       totalCalories: 117,
       carbs: 0,
@@ -22,6 +25,7 @@ export function HomeScreen() {
       meal: 'Lunch',
     },
     {
+      id: '2',
       name: 'Sorvete',
       totalCalories: 105,
       carbs: 14,
@@ -31,6 +35,7 @@ export function HomeScreen() {
       meal: 'Dinner',
     },
     {
+      id: '3',
       name: 'Ovo frito',
       totalCalories: 97,
       carbs: 1,
@@ -40,6 +45,7 @@ export function HomeScreen() {
       meal: 'Breakfast',
     },
     {
+      id: '4',
       name: 'Arroz Cozido',
       totalCalories: 140,
       carbs: 30.2,
@@ -103,6 +109,7 @@ export function HomeScreen() {
       fats: 0,
     },
   )
+
   const totalCaloric =
     mockTotalUserConsumed.carbs +
     mockTotalUserConsumed.protein +
@@ -117,6 +124,13 @@ export function HomeScreen() {
     { name: 'total', y: mockUserCalorics.totalCalories, color: 'gray300' },
   ]
 
+  function handleNavigationProgressScreen(meal: string) {
+    const foods = mockItemsConsumed.filter(item => item.meal === meal)
+    navigation.navigate('ProgressScreen', {
+      macroNutrients: foods,
+    })
+  }
+
   return (
     <Screen scrollable>
       <HeaderScreens screenName="bottom_tap_home" />
@@ -125,10 +139,11 @@ export function HomeScreen() {
         label={`${mockDataGraph[0].y}/${mockDataGraph[1].y}`}
         description="home_screen_graph_title"
       />
-      <Roboto
-        text="home_screen_sub_title"
-        textStyles="LargeRegular"
-        color="primary"
+      <Button
+        title="home_screen_sub_title"
+        typeButton="ButtonText"
+        style={{ justifyContent: 'flex-start' }}
+        onPress={() => {}}
       />
       <S.HomeScreenList>
         {MockData.map(item => (
@@ -136,9 +151,7 @@ export function HomeScreen() {
             title={item.title as CardSmackTitleType}
             totalCaloric={item.totalCaloric}
             key={item.title}
-            onPress={() => {
-              console.log('OIII')
-            }}
+            onPress={() => handleNavigationProgressScreen(item.title)}
           />
         ))}
       </S.HomeScreenList>

@@ -98,6 +98,7 @@
     "card_nutrition_low_consumption_indicator": "LOW CONSUMPTION",
     "nutrition_detail_title_proteins": "Recipes with your favorite proteins",
     "nutrition_detail_title_carbs": "Recipes with your favorite carbs",
-    "nutrition_detail_title_fats": "Recipes with your favorite fats"
+    "nutrition_detail_title_fats": "Recipes with your favorite fats",
+    "progress_screen_title": "Daily Progress"
   }
 }
