@@ -40,8 +40,6 @@
     "well_come_balanced_diet": "Learn how to calculate the balanced diet of your diet.",
     "login_password_have_min_6_char": "Password must have at least 6 characters.",
     "create_account_title": "Create new Account",
-    "create_account_complete_name": "Complete Name",
-    "create_account_complete_name_placeholder": "Type your complete name",
     "create_account_username": "Username",
     "create_account_username_placeholder": "Type your username",
     "create_account_confirm_password": "Confirm Password",

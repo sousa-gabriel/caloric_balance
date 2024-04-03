@@ -7,8 +7,8 @@ import { AppRoutesParamList } from './app.routes'
 declare global {
   namespace ReactNavigation {
     interface RootParamList
-      extends OnBoardRoutesParamList,
-        BottomTabsParamList,
+      extends BottomTabsParamList,
+        OnBoardRoutesParamList,
         AppRoutesParamList,
         PublicRoutesParamList {}
   }

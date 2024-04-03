@@ -12,7 +12,6 @@ export function SignUpScreen() {
   const { registerWithEmail } = useAuth()
   const { control, formState, handleSubmit } = useForm<SignUpSchemaType>({
     defaultValues: {
-      fullName: '',
       username: '',
       email: '',
       password: '',
@@ -25,8 +24,9 @@ export function SignUpScreen() {
   const handleNavigationSuccess = async ({
     email,
     password,
+    username,
   }: SignUpSchemaType) => {
-    await registerWithEmail(email, password).then(() => {
+    await registerWithEmail(email, password, username).then(() => {
       navigation.navigate('SuccessScreen', {
         description: 'success_screen_message_create_account',
       })
@@ -36,12 +36,6 @@ export function SignUpScreen() {
   return (
     <Screen scrollable>
       <Header title="create_account_title" />
-      <FormTextInput
-        control={control}
-        name="fullName"
-        label="create_account_complete_name"
-        placeholder="create_account_complete_name_placeholder"
-      />
       <FormTextInput
         control={control}
         name="username"

@@ -40,8 +40,6 @@
     "well_come_balanced_diet": "Aprenda a calcular uma dieta equilibrada.",
     "login_password_have_min_6_char": "La contraseña debe tener al menos 6 caracteres",
     "create_account_title": "Crear nueva cuenta",
-    "create_account_complete_name": "Nombre completo",
-    "create_account_complete_name_placeholder": "Ingrese su nombre completo",
     "create_account_username": "Nombre de usuario",
     "create_account_username_placeholder": "Ingrese su nombre de usuario",
     "create_account_confirm_password": "Confirmar contraseña",

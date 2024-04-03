@@ -1,9 +1,8 @@
 import { z } from 'zod'
 
-const userNameRegex = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim
 export const signUpSchema = z
   .object({
-    fullName: z
+    username: z
       .string()
       .min(10, 'create_account_very_short_name_error')
       .max(50, 'create_account_very_long_username_error')
@@ -15,10 +14,6 @@ export const signUpSchema = z
           )
           .join(' ')
       }),
-    username: z
-      .string()
-      .regex(userNameRegex, 'create_account_username_invalid_error')
-      .toLowerCase(),
     email: z.string().email(),
     password: z.string().min(6, 'login_password_have_min_6_char'),
     confirmPassword: z.string().min(6, 'login_password_have_min_6_char'),
