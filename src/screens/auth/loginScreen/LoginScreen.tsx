@@ -19,7 +19,7 @@ export function LoginScreen() {
       email: '',
       password: '',
     },
-    mode: 'onChange',
+    mode: 'onSubmit',
     resolver: zodResolver(loadingSchema),
     shouldFocusError: true,
   })
@@ -33,24 +33,14 @@ export function LoginScreen() {
   }
 
   const handleLogin = async (data: LoginSchemaType) => {
-    navigation.navigate('GenderScreen')
-    // await loginWithEmail(data.email, data.password)
-    //   .then(data => {
-    //     Alert.alert(
-    //       'Sucesso',
-    //       `Parabens ${data.user.email} seu Login foi realizado com sucesso!!!`,
-    //     )
-    //   })
-    //   .catch(() => {
-    //     setError('email', {
-    //       type: 'manual',
-    //       message: ' ',
-    //     })
-    //     setError('password', {
-    //       type: 'manual',
-    //       message: 'Email ou senha incorretos!!!',
-    //     })
-    //   })
+    loginWithEmail(data.email, data.password).catch(() => {
+      setError('email', {
+        message: ' ',
+      })
+      setError('password', {
+        message: 'Email ou senha incorretos!!!',
+      })
+    })
   }
 
   return (
