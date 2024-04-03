@@ -3,10 +3,10 @@ import { Button, Input, Roboto, Screen, Step } from '@components'
 import { normalize } from '@utils'
 import * as S from '../OnBoardStyles'
 import { useNavigation } from '@react-navigation/native'
-import { AppRoutesProps } from 'src/routes/navigationType'
+import { OnBoardRouteProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
 
-export function YearScreen({ route }: AppRoutesProps<'YearScreen'>) {
+export function YearScreen({ route }: OnBoardRouteProps<'YearScreen'>) {
   const navigation = useNavigation()
   const { gender, objective } = route.params
   const [age, setAge] = React.useState('')

@@ -3,12 +3,12 @@ import { Roboto, Screen, Step, ActivityCard } from '@components'
 import { normalize } from '@utils'
 import * as S from '../OnBoardStyles'
 import { useNavigation } from '@react-navigation/native'
-import { AppRoutesProps } from 'src/routes/navigationType'
+import { OnBoardRouteProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
 
 export type Activity = 'Baixo' | 'Médio' | 'Alto'
 
-export function ActivityScreen({ route }: AppRoutesProps<'ActivityScreen'>) {
+export function ActivityScreen({ route }: OnBoardRouteProps<'ActivityScreen'>) {
   const navigation = useNavigation()
   const { gender, objective, age, height, weight, weightObject } = route.params
 

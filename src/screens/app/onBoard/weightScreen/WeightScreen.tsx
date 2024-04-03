@@ -3,10 +3,10 @@ import { Button, Input, Roboto, Screen, Step } from '@components'
 import { normalize } from '@utils'
 import * as S from '../OnBoardStyles'
 import { useNavigation } from '@react-navigation/native'
-import { AppRoutesProps } from 'src/routes/navigationType'
+import { OnBoardRouteProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
 
-export function WeightScreen({ route }: AppRoutesProps<'WeightScreen'>) {
+export function WeightScreen({ route }: OnBoardRouteProps<'WeightScreen'>) {
   const navigation = useNavigation()
   const [weight, setWeight] = useState('')
   const { gender, objective, age, height } = route.params

@@ -3,12 +3,12 @@ import { Button, Roboto, Screen, Step } from '@components'
 import { normalize } from '@utils'
 import * as S from '../OnBoardStyles'
 import { useNavigation } from '@react-navigation/native'
-import { AppRoutesProps } from 'src/routes/navigationType'
+import { OnBoardRouteProps } from 'src/routes/navigationType'
 import { View } from 'react-native'
 import { Fruit, Hamburger, Heart } from '@assets'
 import LottieView from 'lottie-react-native'
 
-export function BenefitsScreen({ route }: AppRoutesProps<'BenefitsScreen'>) {
+export function BenefitsScreen({ route }: OnBoardRouteProps<'BenefitsScreen'>) {
   const navigation = useNavigation()
   const { gender, objective, age, height, weight, weightObject } = route.params
 

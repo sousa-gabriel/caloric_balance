@@ -3,7 +3,7 @@ import { Button, Roboto, Screen, Step } from '@components'
 import { normalize } from '@utils'
 import * as S from '../OnBoardStyles'
 import { useNavigation } from '@react-navigation/native'
-import { AppRoutesProps } from 'src/routes/navigationType'
+import { OnBoardRouteProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
 
 export type objective =
@@ -11,7 +11,9 @@ export type objective =
   | 'onboarding_object_Keep_in_shape'
   | 'onboarding_object_increase_muscles'
 
-export function ObjectiveScreen({ route }: AppRoutesProps<'ObjectiveScreen'>) {
+export function ObjectiveScreen({
+  route,
+}: OnBoardRouteProps<'ObjectiveScreen'>) {
   const navigation = useNavigation()
   const { gender } = route.params
 
