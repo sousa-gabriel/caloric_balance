@@ -4,13 +4,23 @@ import { NavigationContainer } from '@react-navigation/native'
 import { PublicRoutes } from './public.routes'
 import { OnBoardRoutes } from './onBoard.routes'
 import { AppRoutes } from './app.routes'
+import { useAuthStore } from '@globalState'
 
 export function Routes() {
-  const authenticated = false
-  return (
-    <NavigationContainer>
-      {/* {authenticated ? <OnBoardRoutes /> : <PublicRoutes />} */}
-      <AppRoutes />
-    </NavigationContainer>
-  )
+  const { onBoarding, user } = useAuthStore()
+
+  function validateAccess() {
+    // return <AppRoutes />
+    if (user === null) {
+      return <PublicRoutes />
+    }
+
+    if (!onBoarding) {
+      return <OnBoardRoutes />
+    }
+
+    return <AppRoutes />
+  }
+
+  return <NavigationContainer>{validateAccess()}</NavigationContainer>
 }

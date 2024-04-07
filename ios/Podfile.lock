@@ -1233,6 +1233,10 @@ PODS:
     - React-logger (= 0.73.3)
     - React-perflogger (= 0.73.3)
   - RecaptchaInterop (100.0.0)
+  - RNCAsyncStorage (1.23.1):
+    - React-Core
+  - RNDeviceInfo (10.13.1):
+    - React-Core
   - RNFBAnalytics (18.8.0):
     - Firebase/Analytics (= 10.20.0)
     - React-Core
@@ -1244,7 +1248,7 @@ PODS:
     - Firebase/Auth (= 10.20.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.15.0):
+  - RNGestureHandler (2.16.0):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1253,7 +1257,7 @@ PODS:
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
     - ReactCommon/turbomodule/core
-  - RNScreens (3.29.0):
+  - RNScreens (3.30.1):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1345,6 +1349,8 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - "RNFBAnalytics (from `../node_modules/@react-native-firebase/analytics`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
@@ -1487,6 +1493,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNFBAnalytics:
     :path: "../node_modules/@react-native-firebase/analytics"
   RNFBApp:
@@ -1583,12 +1593,14 @@ SPEC CHECKSUMS:
   React-utils: b22b4a51aa578b3aac1e7c19501c0b9ba358ed79
   ReactCommon: e708b8be8cb317b83e31c6ccfeda8bf6c0d1a2b3
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
+  RNDeviceInfo: 4f9c7cfd6b9db1b05eb919620a001cf35b536423
   RNFBAnalytics: 4d39fee0e5e27ef7a8e4399cde6763bf60d4bbdb
   RNFBApp: 5810d39f89d38272f29d9908cb19ef641922c081
   RNFBAuth: 22be3e62ac7efaeff8edddd4de93d288382ecdc7
-  RNGestureHandler: deda62b8339496ba721a45e0f3e2d7a319932cee
+  RNGestureHandler: 727b656d5a3fa247aac2c8cc70b8757356066451
   RNReanimated: 5589be82dc26b3f94738eb7c6b1f942787532b25
-  RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
+  RNScreens: 77fc79e66b726ee45b091486b348418ee1d792ab
   RNSVG: ba3e7232f45e34b7b47e74472386cf4e1a676d0a
   RNVectorIcons: 210f910e834e3485af40693ad4615c1ec22fc02b
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17

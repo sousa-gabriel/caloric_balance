@@ -2,18 +2,19 @@ import React from 'react'
 import { Button, Roboto, Screen, Step } from '@components'
 import { normalize } from '@utils'
 import * as S from '../OnBoardStyles'
-import { useNavigation } from '@react-navigation/native'
-import { AppRoutesProps } from 'src/routes/navigationType'
+import { OnBoardRouteProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
 import { calculateBaseCalories } from './CompleteScreenSchema'
+import { useAuthStore } from '@globalState'
 
-export function CompleteScreen({ route }: AppRoutesProps<'CompleteScreen'>) {
-  const navigation = useNavigation()
+export function CompleteScreen({ route }: OnBoardRouteProps<'CompleteScreen'>) {
   const params = route.params
+  const { setOnBoarding, setUserBasalCalories } = useAuthStore()
 
   function handleNext() {
     const BasalCalories = calculateBaseCalories(params)
-    console.log(BasalCalories)
+    setUserBasalCalories(BasalCalories)
+    setOnBoarding(true)
   }
 
   return (

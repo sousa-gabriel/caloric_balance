@@ -13,6 +13,7 @@ module.exports = {
           '@utils': './src/utils',
           '@theme': './src/theme',
           '@hooks': './src/hooks',
+          '@globalState': './src/globalState',
         },
       },
     ],
