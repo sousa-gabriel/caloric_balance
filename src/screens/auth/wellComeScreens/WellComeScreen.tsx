@@ -1,15 +1,19 @@
-import { Balance, Calories, Nutrients } from '@assets'
 import React, { useState } from 'react'
 import * as S from './WellComeScreensStyles'
 import { Roboto } from '@components'
 import { normalize } from '@utils'
 import { useNavigation } from '@react-navigation/native'
+import { useWellComeCompleted } from '@globalState'
+import { Dimensions, Image } from 'react-native'
 
 type TWellComeStep = 'calories' | 'nutrients' | 'balance'
 
 export function WellComeScreens() {
   const [step, setStep] = useState<TWellComeStep>('calories')
   const navigation = useNavigation()
+  const { setWellComeCompleted } = useWellComeCompleted()
+  const { width } = Dimensions.get('window')
+  const HEIGHT_DEFAULT = 400
 
   const stepsSelected = {
     calories: {
@@ -33,20 +37,25 @@ export function WellComeScreens() {
   }
 
   const stepImage = {
-    calories: <Calories />,
-    nutrients: <Nutrients />,
-    balance: <Balance />,
+    calories: require('@assets/imagens/wellCome/Calories.png'),
+    nutrients: require('@assets/imagens/wellCome/Nutrients.png'),
+    balance: require('@assets/imagens/wellCome/Balance.png'),
   }
 
-  const handleNavigation = () => {
+  function handleComplete() {
+    setWellComeCompleted(true)
+    navigation.navigate('LoginScreen')
+  }
+
+  function handleNavigation() {
     stepsSelected[step].nextStep === 'finishWellCome'
-      ? navigation.navigate('LoginScreen')
+      ? handleComplete()
       : setStep(stepsSelected[step].nextStep as TWellComeStep)
   }
 
   return (
     <>
-      {stepImage[step]}
+      {<Image source={stepImage[step]} width={width} height={HEIGHT_DEFAULT} />}
       <S.WellComeContainer>
         <S.WellComeContent>
           <Roboto

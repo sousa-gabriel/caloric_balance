@@ -25,7 +25,7 @@ export function BenefitsScreen({ route }: OnBoardRouteProps<'BenefitsScreen'>) {
 
   return (
     <Screen>
-      <Step stepCurrent={7} maxStep={10} />
+      <Step stepCurrent={7} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="onboarding_benefits_title"

@@ -71,13 +71,14 @@ export const theme = {
     iconGoogle: '#DB4437',
     iconFacebook: '#3B5998',
     iconApple: '#000000',
+    graphBlue: '#3498DB',
+    graphGreen: '#2ECC71',
+    graphYellow: '#F1C40F',
+    primaryContainer: '#FF900055',
+    primary: '#FF9000',
 
     // Dark or Light
     background: isDarkMode ? '#312E38' : '#FFFFFF',
-    // primaryContainer: isDarkMode ? '#FF900055' : '#3377FF55',
-    // primary: isDarkMode ? '#FF9000' : '#3377FF',
-    primaryContainer: isDarkMode ? '#FF900055' : '#FF900055',
-    primary: isDarkMode ? '#FF9000' : '#FF9000',
     onPrimary: isDarkMode ? '#312E38' : '#FFFFFF',
     secondary: isDarkMode ? '#E1E1E1' : '#232129',
     onSecondary: isDarkMode ? '#312E38' : '#FFFFFF',

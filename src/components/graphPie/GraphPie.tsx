@@ -49,7 +49,7 @@ export function GraphPie({ data }: IGraphPie) {
         }
         style={{
           labels: {
-            fontSize: 20,
+            fontSize: 16,
             fontFamily: 'Roboto-Bold',
             fill: theme.colors.gray700,
           },

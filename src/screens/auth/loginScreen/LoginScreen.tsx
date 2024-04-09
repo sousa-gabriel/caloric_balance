@@ -69,7 +69,7 @@ export function LoginScreen() {
           onPress={handleNavigationForgotPassword}
           title="common_forget_password"
           typeButton="ButtonText"
-          style={{ justifyContent: 'flex-start' }}
+          style={{ justifyContent: 'flex-start', marginTop: 0, height: 30 }}
         />
         <ButtonRow
           buttonPrimaryOnPress={handleSubmit(handleLogin)}

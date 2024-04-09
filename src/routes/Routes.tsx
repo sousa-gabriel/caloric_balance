@@ -10,7 +10,7 @@ export function Routes() {
   const { onBoarding, user } = useAuthStore()
 
   function validateAccess() {
-    // return <AppRoutes />
+    return <AppRoutes />
     if (user === null) {
       return <PublicRoutes />
     }

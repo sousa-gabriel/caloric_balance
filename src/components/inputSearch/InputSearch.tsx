@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import * as S from './InputSearchStyle'
 import { theme } from '@theme'
 import { IconWrapper } from '../iconWrapper/IconWrapper'
-import { TextInputProps } from 'react-native'
+import { TextInputProps, TextInput } from 'react-native'
 import { useTranslation } from 'react-i18next'
 
 export interface IInputSearch extends TextInputProps {
@@ -21,6 +21,7 @@ export function InputSearch({
   const colorFocused = isFocused ? 'primary' : 'gray400'
   const [isSecureText, setIsSecureText] = useState(false)
   const { t } = useTranslation()
+  const inputRef = useRef<TextInput>(null)
 
   function handleInputFocus() {
     setIsFocused(true)
@@ -30,9 +31,13 @@ export function InputSearch({
     setIsFocused(false)
   }
 
+  function focusInput() {
+    inputRef.current?.focus()
+  }
+
   return (
-    <S.InputContainer style={{ ...theme.shadow }}>
-      <S.InputRow>
+    <S.InputContainer style={{ ...theme.shadow }} onPress={focusInput}>
+      <S.InputRow focusable={isFocused}>
         <IconWrapper
           icon={'magnify'}
           color={colorFocused}
@@ -41,6 +46,7 @@ export function InputSearch({
         />
         <S.Input
           onFocus={handleInputFocus}
+          ref={inputRef}
           onBlur={handleInputBlur}
           placeholder={t(placeholder ?? '')}
           value={value}

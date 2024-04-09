@@ -22,7 +22,7 @@ export function HeightScreen({ route }: OnBoardRouteProps<'HeightScreen'>) {
 
   return (
     <Screen scrollable>
-      <Step stepCurrent={4} maxStep={10} />
+      <Step stepCurrent={4} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="onboarding_height"

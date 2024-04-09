@@ -21,19 +21,19 @@ export function NutritionScreen() {
       title: 'common_carbs',
       consumption: `${mockUserCalorics.carbs}g`,
       consumptionLevel: 'common_high',
-      color: 'success',
+      color: 'graphBlue',
     },
     {
       title: 'common_proteins',
       consumption: `${mockUserCalorics.protein}g`,
       consumptionLevel: 'common_medium',
-      color: 'primary',
+      color: 'graphGreen',
     },
     {
       title: 'common_fats',
       consumption: `${mockUserCalorics.fats}g`,
       consumptionLevel: 'common_low',
-      color: 'error',
+      color: 'graphYellow',
     },
   ]
 

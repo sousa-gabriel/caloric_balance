@@ -82,21 +82,21 @@ export function DiaryScreen() {
       consumed: mockTotalUserConsumed.protein,
       y: 30,
       total: mockUserCalorics.protein,
-      color: 'success',
+      color: 'graphGreen',
     },
     {
       name: 'common_carbs',
       consumed: mockTotalUserConsumed.carbs,
       y: 50,
       total: mockUserCalorics.carbs,
-      color: 'primary',
+      color: 'graphBlue',
     },
     {
       name: 'common_fats',
       consumed: mockTotalUserConsumed.fats,
       y: 20,
       total: mockUserCalorics.fats,
-      color: 'error',
+      color: 'graphYellow',
     },
   ]
 

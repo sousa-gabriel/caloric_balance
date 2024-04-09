@@ -1,8 +1,13 @@
 import { normalize } from '@utils'
 import styled from 'styled-components/native'
 
-export const InputContainer = styled.View`
+interface IInputRow {
+  focusable: boolean
+}
+
+export const InputContainer = styled.Pressable`
   width: 100%;
+  height: ${normalize(50)}px;
   background-color: ${({ theme }) => theme.colors.background};
   margin-bottom: ${normalize(32)}px;
 `
@@ -11,10 +16,11 @@ export const Input = styled.TextInput`
   color: ${({ theme }) => theme.colors.secondary};
   margin-left: ${normalize(16)}px;
 `
-export const InputRow = styled.View`
-  height: ${normalize(60)}px;
+export const InputRow = styled.View<IInputRow>`
+  height: ${normalize(50)}px;
   width: 100%;
-  border-color: ${({ theme }) => theme.colors.gray400};
+  border-color: ${({ theme, focusable }) =>
+    theme.colors[focusable ? 'primary' : 'gray400']};
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

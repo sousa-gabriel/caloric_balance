@@ -29,17 +29,17 @@ export const MacroNutrientsCard = ({
     {
       name: 'carbs',
       y: carbs,
-      color: 'success',
+      color: 'graphBlue',
     },
     {
       name: 'protein',
       y: protein,
-      color: 'primary',
+      color: 'graphGreen',
     },
     {
       name: 'fats',
       y: fats,
-      color: 'error',
+      color: 'graphYellow',
     },
   ]
 
@@ -57,7 +57,7 @@ export const MacroNutrientsCard = ({
           />
           <S.Column>
             <S.RowIndicator>
-              <S.Indicator color="success" />
+              <S.Indicator color="graphBlue" />
               <Roboto
                 text={`Carboidrato: ${carbs}g`}
                 color="secondary"
@@ -65,7 +65,7 @@ export const MacroNutrientsCard = ({
               />
             </S.RowIndicator>
             <S.RowIndicator>
-              <S.Indicator color="primary" />
+              <S.Indicator color="graphGreen" />
               <Roboto
                 text={`Proteínas: ${protein}g`}
                 color="secondary"
@@ -73,7 +73,7 @@ export const MacroNutrientsCard = ({
               />
             </S.RowIndicator>
             <S.RowIndicator>
-              <S.Indicator color="error" />
+              <S.Indicator color="graphYellow" />
               <Roboto
                 text={`Gordura: ${fats}g`}
                 color="secondary"

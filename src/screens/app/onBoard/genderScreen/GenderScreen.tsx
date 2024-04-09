@@ -24,7 +24,7 @@ export function GenderScreen() {
 
   return (
     <Screen>
-      <Step haveGoBack={false} stepCurrent={1} maxStep={10} />
+      <Step haveGoBack={false} stepCurrent={1} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="onboarding_gender"

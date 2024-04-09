@@ -26,7 +26,7 @@ export function WeightObjectScreen({
 
   return (
     <Screen>
-      <Step stepCurrent={6} maxStep={10} />
+      <Step stepCurrent={6} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="onboarding_object_weight"

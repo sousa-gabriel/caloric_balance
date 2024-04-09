@@ -8,12 +8,12 @@ interface IButtonStyle {
 
 export const ButtonContainer = styled.TouchableOpacity<IButtonStyle>`
   background-color: ${({ theme, type }) =>
-    type === 'Default' ? theme.colors.primary : 'transparent'};
-  height: ${normalize(50)}px;
+    type === 'Default' ? theme.colors.button : 'transparent'};
+  height: ${normalize(40)}px;
   width: 100%;
   border-radius: ${normalize(5)}px;
-  border-width: ${({ type }) => (type === 'ButtonLine' ? 2 : 0)}px;
-  border-color: ${({ theme }) => theme.colors.primary};
+  border-width: ${({ type }) => (type === 'ButtonLine' ? 1 : 0)}px;
+  border-color: ${({ theme }) => theme.colors.button};
   justify-content: center;
   align-items: center;
   flex-direction: row;

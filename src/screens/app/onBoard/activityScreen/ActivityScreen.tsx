@@ -26,7 +26,7 @@ export function ActivityScreen({ route }: OnBoardRouteProps<'ActivityScreen'>) {
 
   return (
     <Screen>
-      <Step stepCurrent={8} maxStep={10} />
+      <Step stepCurrent={8} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="onboarding_activity_title"

@@ -26,7 +26,7 @@ export function ObjectiveScreen({
 
   return (
     <Screen>
-      <Step stepCurrent={2} maxStep={10} />
+      <Step stepCurrent={2} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="Qual é a seu principal objetivo?"

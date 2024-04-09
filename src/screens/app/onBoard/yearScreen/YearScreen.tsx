@@ -21,7 +21,7 @@ export function YearScreen({ route }: OnBoardRouteProps<'YearScreen'>) {
 
   return (
     <Screen scrollable>
-      <Step stepCurrent={3} maxStep={10} />
+      <Step stepCurrent={3} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="onboarding_year"

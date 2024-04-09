@@ -22,7 +22,7 @@ export function Button({
   isDisabled = false,
   style,
 }: ButtonProps) {
-  const buttonColor = typeButton === 'Default' ? 'onPrimary' : 'primary'
+  const buttonColor = typeButton === 'Default' ? 'onPrimary' : 'button'
 
   return (
     <S.ButtonContainer

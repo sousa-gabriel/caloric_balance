@@ -23,7 +23,7 @@ export function WeightScreen({ route }: OnBoardRouteProps<'WeightScreen'>) {
 
   return (
     <Screen>
-      <Step stepCurrent={5} maxStep={10} />
+      <Step stepCurrent={5} maxStep={9} />
       <S.OnBoardContainer>
         <Roboto
           text="onboarding_weight"

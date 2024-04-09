@@ -24,9 +24,9 @@ interface IMacroNutrientsItem {
 export const ItemDetails = ({ carbs, fats, protein }: IItemDetails) => {
   const { t } = useTranslation()
   const macroNutrients: IMacroNutrientsItem[] = [
-    { value: `${t('common_carbs')}: ${carbs}g`, color: 'success' },
-    { value: `${t('common_proteins')}: ${protein}g`, color: 'primary' },
-    { value: `${t('common_fats')}: ${fats}g`, color: 'error' },
+    { value: `${t('common_carbs')}: ${carbs}g`, color: 'graphBlue' },
+    { value: `${t('common_proteins')}: ${protein}g`, color: 'graphGreen' },
+    { value: `${t('common_fats')}: ${fats}g`, color: 'graphYellow' },
   ]
 
   return (
