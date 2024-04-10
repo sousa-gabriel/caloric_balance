@@ -25,7 +25,7 @@ export const MacroNutrientsCard = ({
   haveIndicator = true,
   onPress,
 }: IMacroNutrientsCard) => {
-  const mockDataGraph: IGraphData[] = [
+  const graphCustom: IGraphData[] = [
     {
       name: 'carbs',
       y: carbs,
@@ -49,8 +49,8 @@ export const MacroNutrientsCard = ({
         <Roboto text={name} color="secondary" textStyles="LargeSemiBold" />
         <S.Row>
           <GraphDonut
-            data={mockDataGraph}
-            label={totalCalories}
+            data={graphCustom}
+            label={totalCalories.toFixed(0)}
             size={25}
             sizeGraph={140}
             internalRadius={40}
@@ -59,7 +59,7 @@ export const MacroNutrientsCard = ({
             <S.RowIndicator>
               <S.Indicator color="graphBlue" />
               <Roboto
-                text={`Carboidrato: ${carbs}g`}
+                text={`Carboidrato: ${carbs ? carbs.toFixed(2) : 0}g`}
                 color="secondary"
                 textStyles="MediumSemiBold"
               />
@@ -67,7 +67,7 @@ export const MacroNutrientsCard = ({
             <S.RowIndicator>
               <S.Indicator color="graphGreen" />
               <Roboto
-                text={`Proteínas: ${protein}g`}
+                text={`Proteínas: ${protein ? protein.toFixed(2) : 0}g`}
                 color="secondary"
                 textStyles="MediumSemiBold"
               />
@@ -75,7 +75,7 @@ export const MacroNutrientsCard = ({
             <S.RowIndicator>
               <S.Indicator color="graphYellow" />
               <Roboto
-                text={`Gordura: ${fats}g`}
+                text={`Gordura: ${fats ? fats.toFixed(2) : 0}g`}
                 color="secondary"
                 textStyles="MediumSemiBold"
               />

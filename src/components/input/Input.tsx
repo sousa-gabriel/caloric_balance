@@ -20,6 +20,7 @@ export function Input({
   onChangeText,
   resetError,
   isInputPassword,
+  ...props
 }: IInput) {
   const [isFocused, setIsFocused] = useState(false)
   const colorFocused = isFocused ? 'primary' : 'secondary'
@@ -41,6 +42,7 @@ export function Input({
       <Roboto text={label} color={colorInput} textStyles="LargeSemiBold" />
       <S.InputRow color={colorInput} isFocused={isFocused}>
         <S.Input
+          {...props}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           color={colorInput}

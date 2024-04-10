@@ -97,6 +97,7 @@
     "nutrition_detail_title_proteins": "Receitas com suas proteinas favoritas",
     "nutrition_detail_title_carbs": "Receitas com seus carboidratos favoritos",
     "nutrition_detail_title_fats": "Receitas com suas gorduras favoritas",
-    "progress_screen_title": "Progresso Diário"
+    "progress_screen_title": "Progresso Diário",
+    "list_empty": "Lista vazia..."
   }
 }

@@ -14,6 +14,8 @@ module.exports = {
           '@theme': './src/theme',
           '@hooks': './src/hooks',
           '@globalState': './src/globalState',
+          '@api': './src/api',
+          '@services': './src/services',
         },
       },
     ],

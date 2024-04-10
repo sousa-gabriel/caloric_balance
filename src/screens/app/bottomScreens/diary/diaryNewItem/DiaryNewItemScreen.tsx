@@ -1,62 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Header,
   IMacroNutrientsCard,
   InputSearch,
+  Loading,
   MacroNutrientsCard,
+  Roboto,
   Screen,
 } from '@components'
-import { FlatList } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { FlatList, View } from 'react-native'
+import { useNavigation, useScrollToTop } from '@react-navigation/native'
+import { Nutrition, nutritionService } from '@services'
+import LottieView from 'lottie-react-native'
+import { normalize } from '@utils'
 
 export function DiaryNewItemScreen() {
+  const [page, setPage] = useState(1)
+  const [listItem, setListItem] = useState<Nutrition[]>([])
   const [searchValue, setSearchValue] = useState('')
+  const [loading, setLoading] = useState(false)
+  const flatListRef = React.useRef<FlatList<Nutrition>>(null)
+  useScrollToTop(flatListRef)
   const navigation = useNavigation()
-  let mockItemsConsumed = [
-    {
-      id: '1',
-      name: 'Frango Cozido',
-      totalCalories: 117,
-      carbs: 0,
-      protein: 21.6,
-      fats: 1.4,
-      TotalWeigh: '108 gramas',
-      meal: 'Lunch',
-    },
-    {
-      id: '2',
-      name: 'Sorvete',
-      totalCalories: 105,
-      carbs: 14,
-      protein: 1.7,
-      fats: 4.5,
-      TotalWeigh: '1 bola',
-      meal: 'Dinner',
-    },
-    {
-      id: '3',
-      name: 'Ovo frito',
-      totalCalories: 97,
-      carbs: 1,
-      protein: 6.2,
-      fats: 7,
-      TotalWeigh: '1 unidade',
-      meal: 'Breakfast',
-    },
-    {
-      id: '4',
-      name: 'Arroz Cozido',
-      totalCalories: 140,
-      carbs: 30.2,
-      protein: 0,
-      fats: 3.2,
-      TotalWeigh: '108 gramas',
-      meal: 'Lunch',
-    },
-  ]
 
   function filterItems() {
-    return mockItemsConsumed.filter(item => {
+    return listItem.filter(item => {
       return (
         item.name.toLowerCase().includes(searchValue.toLowerCase()) ||
         item.meal.toLowerCase().includes(searchValue.toLowerCase())
@@ -68,10 +36,23 @@ export function DiaryNewItemScreen() {
     navigation.navigate('DiaryItemScreen', { itemMacroNutrients: item })
   }
 
+  useEffect(() => {
+    if (searchValue.length >= 3) {
+      setLoading(true)
+      nutritionService
+        .getList({ page, searchValue })
+        .then(data => {
+          setListItem([...listItem, ...data])
+        })
+        .finally(() => setLoading(false))
+    }
+  }, [searchValue])
+
   return (
     <Screen>
       <Header title={'common_item_list'} headerSize={100} />
       <FlatList
+        ref={flatListRef}
         data={filterItems()}
         contentContainerStyle={{ paddingTop: 20, paddingBottom: 20 }}
         showsVerticalScrollIndicator={false}
@@ -83,6 +64,28 @@ export function DiaryNewItemScreen() {
             onResetSearch={() => setSearchValue('')}
           />
         }
+        ListEmptyComponent={
+          <View style={{ flex: 1, marginTop: 50, alignItems: 'center' }}>
+            <LottieView
+              autoPlay
+              loop
+              source={require('../../../../../assets/lottie/EmptyList.json')}
+              style={{
+                width: normalize(250),
+                height: normalize(250),
+                alignSelf: 'center',
+                marginBottom: 20,
+              }}
+            />
+            <Roboto
+              text="list_empty"
+              textStyles="LargeSemiBold"
+              color="secondary"
+              style={{ fontSize: 20 }}
+            />
+          </View>
+        }
+        ListFooterComponent={loading ? <Loading /> : null}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item, index }) => (
           <MacroNutrientsCard
@@ -91,6 +94,8 @@ export function DiaryNewItemScreen() {
             onPress={() => handleItemPress(item)}
           />
         )}
+        onEndReached={() => setPage(page + 1)}
+        onEndReachedThreshold={0.1}
       />
     </Screen>
   )
