@@ -4,18 +4,21 @@ import { theme } from '@theme'
 import { IconWrapper } from '../iconWrapper/IconWrapper'
 import { TextInputProps, TextInput } from 'react-native'
 import { useTranslation } from 'react-i18next'
+import { Button } from '../button/Button'
 
 export interface IInputSearch extends TextInputProps {
   placeholder?: string
   value: string
   onChangeText: (text: string) => void
   onResetSearch?: () => void
+  handleSearch: () => void
 }
 export function InputSearch({
   placeholder,
   value,
   onChangeText,
   onResetSearch,
+  handleSearch,
 }: IInputSearch) {
   const [isFocused, setIsFocused] = useState(false)
   const colorFocused = isFocused ? 'primary' : 'gray400'
@@ -62,6 +65,12 @@ export function InputSearch({
           />
         )}
       </S.InputRow>
+      <Button
+        typeButton="ButtonText"
+        onPress={handleSearch}
+        title={'common_search_food'}
+        style={{ width: '50%', justifyContent: 'flex-start' }}
+      />
     </S.InputContainer>
   )
 }

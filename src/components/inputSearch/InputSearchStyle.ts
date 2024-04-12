@@ -9,7 +9,7 @@ export const InputContainer = styled.Pressable`
   width: 100%;
   height: ${normalize(50)}px;
   background-color: ${({ theme }) => theme.colors.background};
-  margin-bottom: ${normalize(32)}px;
+  margin-bottom: ${normalize(50)}px;
 `
 export const Input = styled.TextInput`
   flex: 1;
@@ -27,4 +27,5 @@ export const InputRow = styled.View<IInputRow>`
   border-radius: 5px;
   padding: 0px ${normalize(16)}px;
   border-width: 1px;
+  margin-right: 16px;
 `

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import {
   Header,
   IMacroNutrientsCard,
@@ -15,13 +15,13 @@ import LottieView from 'lottie-react-native'
 import { normalize } from '@utils'
 
 export function DiaryNewItemScreen() {
-  const [page, setPage] = useState(1)
   const [listItem, setListItem] = useState<Nutrition[]>([])
   const [searchValue, setSearchValue] = useState('')
   const [loading, setLoading] = useState(false)
   const flatListRef = React.useRef<FlatList<Nutrition>>(null)
   useScrollToTop(flatListRef)
   const navigation = useNavigation()
+  let page = 1
 
   function filterItems() {
     return listItem.filter(item => {
@@ -36,8 +36,13 @@ export function DiaryNewItemScreen() {
     navigation.navigate('DiaryItemScreen', { itemMacroNutrients: item })
   }
 
-  useEffect(() => {
-    if (searchValue.length >= 3) {
+  const handleItens = useCallback(
+    (updatePage: boolean) => {
+      if (updatePage) {
+        page += 1
+      } else {
+        page = 1
+      }
       setLoading(true)
       nutritionService
         .getList({ page, searchValue })
@@ -45,8 +50,9 @@ export function DiaryNewItemScreen() {
           setListItem([...listItem, ...data])
         })
         .finally(() => setLoading(false))
-    }
-  }, [searchValue])
+    },
+    [searchValue, listItem],
+  )
 
   return (
     <Screen>
@@ -58,6 +64,7 @@ export function DiaryNewItemScreen() {
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <InputSearch
+            handleSearch={() => handleItens(false)}
             placeholder={'common_search'}
             value={searchValue}
             onChangeText={setSearchValue}
@@ -94,7 +101,11 @@ export function DiaryNewItemScreen() {
             onPress={() => handleItemPress(item)}
           />
         )}
-        onEndReached={() => setPage(page + 1)}
+        onEndReached={() => {
+          if (listItem.length > 8) {
+            handleItens(true)
+          }
+        }}
         onEndReachedThreshold={0.1}
       />
     </Screen>
