@@ -3,7 +3,7 @@ import * as S from './WellComeScreensStyles'
 import { Roboto } from '@components'
 import { normalize } from '@utils'
 import { useNavigation } from '@react-navigation/native'
-import { useWellComeCompleted } from '@globalState'
+import { storage } from '@globalState'
 import { Dimensions, Image } from 'react-native'
 
 type TWellComeStep = 'calories' | 'nutrients' | 'balance'
@@ -11,7 +11,6 @@ type TWellComeStep = 'calories' | 'nutrients' | 'balance'
 export function WellComeScreens() {
   const [step, setStep] = useState<TWellComeStep>('calories')
   const navigation = useNavigation()
-  const { setWellComeCompleted } = useWellComeCompleted()
   const { width } = Dimensions.get('window')
   const HEIGHT_DEFAULT = 400
 
@@ -43,7 +42,7 @@ export function WellComeScreens() {
   }
 
   function handleComplete() {
-    setWellComeCompleted(true)
+    storage.set('well_come_completed', true)
     navigation.navigate('LoginScreen')
   }
 

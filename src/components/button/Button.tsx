@@ -4,6 +4,7 @@ import { Roboto } from '../roboto/Roboto'
 import { IconWrapper } from '../iconWrapper/IconWrapper'
 import { IIconOptions } from '../iconWrapper/IconNames'
 import { ViewStyle } from 'react-native/types'
+import { Loading } from '../loading/Loading'
 
 export interface ButtonProps {
   title: string
@@ -12,6 +13,7 @@ export interface ButtonProps {
   typeButton?: 'Default' | 'ButtonLine' | 'ButtonText'
   isDisabled?: boolean
   style?: ViewStyle
+  loading?: boolean
 }
 
 export function Button({
@@ -21,6 +23,7 @@ export function Button({
   typeButton = 'Default',
   isDisabled = false,
   style,
+  loading,
 }: ButtonProps) {
   const buttonColor = typeButton === 'Default' ? 'onPrimary' : 'button'
 
@@ -36,7 +39,11 @@ export function Button({
       {icon && (
         <IconWrapper icon={icon} color={buttonColor} marginRight={'sp16'} />
       )}
-      <Roboto text={title} textStyles="LargeSemiBold" color={buttonColor} />
+      {loading ? (
+        <Loading color="secondary" />
+      ) : (
+        <Roboto text={title} textStyles="LargeSemiBold" color={buttonColor} />
+      )}
     </S.ButtonContainer>
   )
 }

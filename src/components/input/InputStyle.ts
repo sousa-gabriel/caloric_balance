@@ -6,12 +6,15 @@ interface IInputStyle {
   isFocused?: boolean
 }
 
-export const InputContainer = styled.View`
+export const InputContainer = styled.Pressable`
   width: 100%;
 `
 export const Input = styled.TextInput<IInputStyle>`
   flex: 1;
-  color: ${({ theme }) => theme.colors.secondary};
+  height: ${normalize(50)}px;
+  background-color: ${({ theme }) => theme.colors.background};
+  margin-bottom: ${normalize(50)}px;
+  margin: ${normalize(40)}px 0px;
 `
 export const InputRow = styled.View<IInputStyle>`
   height: ${normalize(60)}px;
@@ -21,7 +24,7 @@ export const InputRow = styled.View<IInputStyle>`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
   padding: 0px ${normalize(16)}px;
+  border-radius: 5px;
   border-width: ${({ isFocused }) => (isFocused === true ? 2 : 1)}px;
 `

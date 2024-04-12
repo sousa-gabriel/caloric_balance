@@ -1,26 +1,20 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
 
 import { PublicRoutes } from './public.routes'
-import { OnBoardRoutes } from './onBoard.routes'
 import { AppRoutes } from './app.routes'
-import { useAuthStore } from '@globalState'
+import { useAuth } from '@context'
+import { Loading, Screen } from '@components'
 
 export function Routes() {
-  const { onBoarding, user } = useAuthStore()
+  const { user, userStorageLoading } = useAuth()
 
-  function validateAccess() {
-    return <AppRoutes />
-    if (user === null) {
-      return <PublicRoutes />
-    }
-
-    if (!onBoarding) {
-      return <OnBoardRoutes />
-    }
-
-    return <AppRoutes />
+  if (userStorageLoading) {
+    return (
+      <Screen>
+        <Loading />
+      </Screen>
+    )
   }
 
-  return <NavigationContainer>{validateAccess()}</NavigationContainer>
+  return user.id ? <AppRoutes /> : <PublicRoutes />
 }

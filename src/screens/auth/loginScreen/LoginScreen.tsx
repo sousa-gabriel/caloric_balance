@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as S from './LoginScreenStyle'
 import { Button, ButtonRow, FormTextInput, Screen } from '@components'
 import LogoDark from '../../../assets/imagens/png/logoDark.png'
@@ -9,11 +9,12 @@ import { useNavigation } from '@react-navigation/native'
 import { useForm } from 'react-hook-form'
 import { LoginSchemaType, loadingSchema } from './LoginScreenSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useAuth } from '@hooks'
+import { useAuth } from '@context'
 
 export function LoginScreen() {
   const navigation = useNavigation()
-  const { loginWithEmail } = useAuth()
+  const { signInWithEmail } = useAuth()
+  const [loading, setLoading] = useState(false)
   const { control, handleSubmit, setError } = useForm<LoginSchemaType>({
     defaultValues: {
       email: '',
@@ -33,14 +34,22 @@ export function LoginScreen() {
   }
 
   const handleLogin = async (data: LoginSchemaType) => {
-    loginWithEmail(data.email, data.password).catch(() => {
-      setError('email', {
-        message: ' ',
+    setLoading(true)
+    await signInWithEmail(data.email, data.password)
+      .then(() => {
+        navigation.isFocused()
       })
-      setError('password', {
-        message: 'Email ou senha incorretos!!!',
+      .catch(() => {
+        setError('email', {
+          message: ' ',
+        })
+        setError('password', {
+          message: 'Email ou senha incorretos!!!',
+        })
       })
-    })
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return (
@@ -76,6 +85,7 @@ export function LoginScreen() {
           buttonSecondaryOnPress={handleNavigationCreateAccount}
           buttonPrimaryTitle="common_login"
           buttonSecondaryTitle="common_create_account"
+          loading={loading}
         />
         <SocialLogin />
       </S.Container>

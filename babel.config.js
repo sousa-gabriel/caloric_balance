@@ -16,6 +16,7 @@ module.exports = {
           '@globalState': './src/globalState',
           '@api': './src/api',
           '@services': './src/services',
+          '@context': './src/context',
         },
       },
     ],

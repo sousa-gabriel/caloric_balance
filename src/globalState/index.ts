@@ -1,2 +1,2 @@
-export * from './auth/useAuthService'
-export * from './auth/authTypes'
+export * from './storage/useStorageService'
+export * from './storage/storageTypes'

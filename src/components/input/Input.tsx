@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import * as S from './InputStyle'
 import { Roboto } from '../roboto/Roboto'
 import { theme } from '@theme'
 import { IconWrapper } from '../iconWrapper/IconWrapper'
-import { TextInputProps } from 'react-native'
+import { TextInput, TextInputProps } from 'react-native'
 import { useTranslation } from 'react-i18next'
 export interface IInput extends TextInputProps {
   label: string
@@ -27,6 +27,7 @@ export function Input({
   const colorInput = !!errorMessage ? 'error' : colorFocused
   const [isSecureText, setIsSecureText] = useState(false)
   const { t } = useTranslation()
+  const inputRef = useRef<TextInput>(null)
 
   function handleInputFocus() {
     setIsFocused(true)
@@ -37,12 +38,17 @@ export function Input({
     setIsFocused(false)
   }
 
+  function focusInput() {
+    inputRef.current?.focus()
+  }
+
   return (
-    <S.InputContainer>
+    <S.InputContainer onPress={focusInput}>
       <Roboto text={label} color={colorInput} textStyles="LargeSemiBold" />
       <S.InputRow color={colorInput} isFocused={isFocused}>
         <S.Input
           {...props}
+          ref={inputRef}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           color={colorInput}

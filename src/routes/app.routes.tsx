@@ -11,6 +11,8 @@ import {
   SuccessScreen,
 } from '@screens'
 import { IMacroNutrientsCard, ITitleCardNutrition } from '@components'
+import { OnBoardRoutes } from './onBoard.routes'
+import { storage } from '@globalState'
 
 export type AppRoutesParamList = {
   BottomTabs: undefined
@@ -35,13 +37,20 @@ export type AppRoutesParamList = {
   ProgressScreen: {
     macroNutrients: IMacroNutrientsCard[]
   }
+  OnBoardRoutes: undefined
 }
 
 const Stack = createNativeStackNavigator<AppRoutesParamList>()
 
 export const AppRoutes = () => {
+  const onBoarding = storage.getBoolean('on_boarding')
+
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName={onBoarding ? 'BottomTabs' : 'OnBoardRoutes'}
+    >
+      <Stack.Screen name="OnBoardRoutes" component={OnBoardRoutes} />
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen
         name="NutritionDetailScreen"

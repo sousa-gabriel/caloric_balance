@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import {
   ForgotPasswordScreen,
@@ -7,7 +7,7 @@ import {
   SuccessScreen,
   WellComeScreens,
 } from '@screens'
-import { useWellComeCompleted } from '@globalState'
+import { storage } from '@globalState'
 
 export type PublicRoutesParamList = {
   WellComeScreens: undefined
@@ -25,7 +25,7 @@ export type PublicRoutesParamList = {
 const Stack = createNativeStackNavigator<PublicRoutesParamList>()
 
 export const PublicRoutes = () => {
-  const { wellComeCompleted } = useWellComeCompleted()
+  const wellComeCompleted = storage.getBoolean('well_come_completed')
 
   return (
     <Stack.Navigator

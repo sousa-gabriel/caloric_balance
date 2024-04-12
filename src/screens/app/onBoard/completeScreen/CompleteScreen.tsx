@@ -5,16 +5,18 @@ import * as S from '../OnBoardStyles'
 import { OnBoardRouteProps } from 'src/routes/navigationType'
 import LottieView from 'lottie-react-native'
 import { calculateBaseCalories } from './CompleteScreenSchema'
-import { useAuthStore } from '@globalState'
+import { storage } from '@globalState'
+import { useNavigation } from '@react-navigation/native'
 
 export function CompleteScreen({ route }: OnBoardRouteProps<'CompleteScreen'>) {
   const params = route.params
-  const { setOnBoarding, setUserBasalCalories } = useAuthStore()
+  const navigation = useNavigation()
 
   function handleNext() {
     const BasalCalories = calculateBaseCalories(params)
-    setUserBasalCalories(BasalCalories)
-    setOnBoarding(true)
+    storage.set('well_come_completed', true)
+    storage.set('userBasalCalories', BasalCalories)
+    navigation.navigate('BottomTabs')
   }
 
   return (
