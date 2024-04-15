@@ -14,7 +14,7 @@ export function CompleteScreen({ route }: OnBoardRouteProps<'CompleteScreen'>) {
 
   function handleNext() {
     const BasalCalories = calculateBaseCalories(params)
-    storage.set('well_come_completed', true)
+    storage.set('on_boarding', true)
     storage.set('userBasalCalories', BasalCalories)
     navigation.navigate('BottomTabs')
   }
