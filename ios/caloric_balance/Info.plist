@@ -54,5 +54,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>NSCameraUsageDescription</key>
+  <string>Camera is used to take a photo of your meal</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Photo Library is used to select a photo of your meal</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Microphone is used to record your voice</string>
 </dict>
 </plist>
